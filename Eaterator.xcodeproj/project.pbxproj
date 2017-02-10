@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */; };
+		84E6FA751E4E5DF00029B1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA741E4E5DF00029B1C9 /* ViewController.swift */; };
+		84E6FA781E4E5DF00029B1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA761E4E5DF00029B1C9 /* Main.storyboard */; };
+		84E6FA7A1E4E5DF00029B1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA791E4E5DF00029B1C9 /* Assets.xcassets */; };
+		84E6FA7D1E4E5DF00029B1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA7B1E4E5DF00029B1C9 /* LaunchScreen.storyboard */; };
+		84E6FA881E4E5DF10029B1C9 /* EateratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA871E4E5DF10029B1C9 /* EateratorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E6FA841E4E5DF10029B1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E6FA671E4E5DF00029B1C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E6FA6E1E4E5DF00029B1C9;
+			remoteInfo = Eaterator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eaterator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84E6FA741E4E5DF00029B1C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84E6FA771E4E5DF00029B1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84E6FA791E4E5DF00029B1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E6FA7C1E4E5DF00029B1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84E6FA7E1E4E5DF00029B1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E6FA831E4E5DF10029B1C9 /* EateratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EateratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E6FA871E4E5DF10029B1C9 /* EateratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateratorTests.swift; sourceTree = "<group>"; };
+		84E6FA891E4E5DF10029B1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84E6FA6C1E4E5DF00029B1C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E6FA801E4E5DF10029B1C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84E6FA661E4E5DF00029B1C9 = {
+			isa = PBXGroup;
+			children = (
+				84E6FA711E4E5DF00029B1C9 /* Eaterator */,
+				84E6FA861E4E5DF10029B1C9 /* EateratorTests */,
+				84E6FA701E4E5DF00029B1C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84E6FA701E4E5DF00029B1C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */,
+				84E6FA831E4E5DF10029B1C9 /* EateratorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E6FA711E4E5DF00029B1C9 /* Eaterator */ = {
+			isa = PBXGroup;
+			children = (
+				84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */,
+				84E6FA741E4E5DF00029B1C9 /* ViewController.swift */,
+				84E6FA761E4E5DF00029B1C9 /* Main.storyboard */,
+				84E6FA791E4E5DF00029B1C9 /* Assets.xcassets */,
+				84E6FA7B1E4E5DF00029B1C9 /* LaunchScreen.storyboard */,
+				84E6FA7E1E4E5DF00029B1C9 /* Info.plist */,
+			);
+			path = Eaterator;
+			sourceTree = "<group>";
+		};
+		84E6FA861E4E5DF10029B1C9 /* EateratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E6FA871E4E5DF10029B1C9 /* EateratorTests.swift */,
+				84E6FA891E4E5DF10029B1C9 /* Info.plist */,
+			);
+			path = EateratorTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84E6FA6E1E4E5DF00029B1C9 /* Eaterator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E6FA8C1E4E5DF10029B1C9 /* Build configuration list for PBXNativeTarget "Eaterator" */;
+			buildPhases = (
+				84E6FA6B1E4E5DF00029B1C9 /* Sources */,
+				84E6FA6C1E4E5DF00029B1C9 /* Frameworks */,
+				84E6FA6D1E4E5DF00029B1C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Eaterator;
+			productName = Eaterator;
+			productReference = 84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84E6FA821E4E5DF10029B1C9 /* EateratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E6FA8F1E4E5DF10029B1C9 /* Build configuration list for PBXNativeTarget "EateratorTests" */;
+			buildPhases = (
+				84E6FA7F1E4E5DF10029B1C9 /* Sources */,
+				84E6FA801E4E5DF10029B1C9 /* Frameworks */,
+				84E6FA811E4E5DF10029B1C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E6FA851E4E5DF10029B1C9 /* PBXTargetDependency */,
+			);
+			name = EateratorTests;
+			productName = EateratorTests;
+			productReference = 84E6FA831E4E5DF10029B1C9 /* EateratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84E6FA671E4E5DF00029B1C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Eaterator;
+				TargetAttributes = {
+					84E6FA6E1E4E5DF00029B1C9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					84E6FA821E4E5DF10029B1C9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84E6FA6E1E4E5DF00029B1C9;
+					};
+				};
+			};
+			buildConfigurationList = 84E6FA6A1E4E5DF00029B1C9 /* Build configuration list for PBXProject "Eaterator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84E6FA661E4E5DF00029B1C9;
+			productRefGroup = 84E6FA701E4E5DF00029B1C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84E6FA6E1E4E5DF00029B1C9 /* Eaterator */,
+				84E6FA821E4E5DF10029B1C9 /* EateratorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84E6FA6D1E4E5DF00029B1C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E6FA7D1E4E5DF00029B1C9 /* LaunchScreen.storyboard in Resources */,
+				84E6FA7A1E4E5DF00029B1C9 /* Assets.xcassets in Resources */,
+				84E6FA781E4E5DF00029B1C9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E6FA811E4E5DF10029B1C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84E6FA6B1E4E5DF00029B1C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E6FA751E4E5DF00029B1C9 /* ViewController.swift in Sources */,
+				84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E6FA7F1E4E5DF10029B1C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E6FA881E4E5DF10029B1C9 /* EateratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E6FA851E4E5DF10029B1C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E6FA6E1E4E5DF00029B1C9 /* Eaterator */;
+			targetProxy = 84E6FA841E4E5DF10029B1C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84E6FA761E4E5DF00029B1C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E6FA771E4E5DF00029B1C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84E6FA7B1E4E5DF00029B1C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E6FA7C1E4E5DF00029B1C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84E6FA8A1E4E5DF10029B1C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84E6FA8B1E4E5DF10029B1C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84E6FA8D1E4E5DF10029B1C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Eaterator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eaterator.Eaterator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		84E6FA8E1E4E5DF10029B1C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Eaterator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eaterator.Eaterator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		84E6FA901E4E5DF10029B1C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EateratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eaterator.EateratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eaterator.app/Eaterator";
+			};
+			name = Debug;
+		};
+		84E6FA911E4E5DF10029B1C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EateratorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eaterator.EateratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eaterator.app/Eaterator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84E6FA6A1E4E5DF00029B1C9 /* Build configuration list for PBXProject "Eaterator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E6FA8A1E4E5DF10029B1C9 /* Debug */,
+				84E6FA8B1E4E5DF10029B1C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E6FA8C1E4E5DF10029B1C9 /* Build configuration list for PBXNativeTarget "Eaterator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E6FA8D1E4E5DF10029B1C9 /* Debug */,
+				84E6FA8E1E4E5DF10029B1C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84E6FA8F1E4E5DF10029B1C9 /* Build configuration list for PBXNativeTarget "EateratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E6FA901E4E5DF10029B1C9 /* Debug */,
+				84E6FA911E4E5DF10029B1C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84E6FA671E4E5DF00029B1C9 /* Project object */;
+}
