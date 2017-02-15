@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DEFAD60E59931B62E1DAA4B /* Pods_Eaterator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1197610311D35AE47195E564 /* Pods_Eaterator.framework */; };
 		84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */; };
 		84E6FA751E4E5DF00029B1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA741E4E5DF00029B1C9 /* ViewController.swift */; };
 		84E6FA781E4E5DF00029B1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA761E4E5DF00029B1C9 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1197610311D35AE47195E564 /* Pods_Eaterator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eaterator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A8E792C9F251246BE6B6873 /* Pods-Eaterator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eaterator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eaterator/Pods-Eaterator.release.xcconfig"; sourceTree = "<group>"; };
 		84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eaterator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E6FA741E4E5DF00029B1C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		84E6FA831E4E5DF10029B1C9 /* EateratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EateratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6FA871E4E5DF10029B1C9 /* EateratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateratorTests.swift; sourceTree = "<group>"; };
 		84E6FA891E4E5DF10029B1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1778E9701AD768D0C45200F /* Pods-Eaterator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eaterator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eaterator/Pods-Eaterator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEFAD60E59931B62E1DAA4B /* Pods_Eaterator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D3590132B00AAE54502405F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1778E9701AD768D0C45200F /* Pods-Eaterator.debug.xcconfig */,
+				5A8E792C9F251246BE6B6873 /* Pods-Eaterator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5640D2F3438B1279CEAB8236 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1197610311D35AE47195E564 /* Pods_Eaterator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84E6FA661E4E5DF00029B1C9 = {
 			isa = PBXGroup;
 			children = (
 				84E6FA711E4E5DF00029B1C9 /* Eaterator */,
 				84E6FA861E4E5DF10029B1C9 /* EateratorTests */,
 				84E6FA701E4E5DF00029B1C9 /* Products */,
+				3D3590132B00AAE54502405F /* Pods */,
+				5640D2F3438B1279CEAB8236 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84E6FA8C1E4E5DF10029B1C9 /* Build configuration list for PBXNativeTarget "Eaterator" */;
 			buildPhases = (
+				298C17C44D7718EDCC2115A3 /* [CP] Check Pods Manifest.lock */,
 				84E6FA6B1E4E5DF00029B1C9 /* Sources */,
 				84E6FA6C1E4E5DF00029B1C9 /* Frameworks */,
 				84E6FA6D1E4E5DF00029B1C9 /* Resources */,
+				093E4AC92CC192D69B1118A0 /* [CP] Embed Pods Frameworks */,
+				D3F95E0F509B26E43C302F87 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +220,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		093E4AC92CC192D69B1118A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eaterator/Pods-Eaterator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		298C17C44D7718EDCC2115A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3F95E0F509B26E43C302F87 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eaterator/Pods-Eaterator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84E6FA6B1E4E5DF00029B1C9 /* Sources */ = {
@@ -337,9 +412,11 @@
 		};
 		84E6FA8D1E4E5DF10029B1C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1778E9701AD768D0C45200F /* Pods-Eaterator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Eaterator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eaterator.Eaterator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,9 +426,11 @@
 		};
 		84E6FA8E1E4E5DF10029B1C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A8E792C9F251246BE6B6873 /* Pods-Eaterator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Eaterator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eaterator.Eaterator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,6 +485,7 @@
 				84E6FA8E1E4E5DF10029B1C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84E6FA8F1E4E5DF10029B1C9 /* Build configuration list for PBXNativeTarget "EateratorTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +494,7 @@
 				84E6FA911E4E5DF10029B1C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
