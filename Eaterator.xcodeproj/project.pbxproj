@@ -173,6 +173,7 @@
 				TargetAttributes = {
 					84E6FA6E1E4E5DF00029B1C9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y3RCB36D2R;
 						ProvisioningStyle = Automatic;
 					};
 					84E6FA821E4E5DF10029B1C9 = {
@@ -415,6 +416,7 @@
 			baseConfigurationReference = A1778E9701AD768D0C45200F /* Pods-Eaterator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y3RCB36D2R;
 				INFOPLIST_FILE = Eaterator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -429,6 +431,7 @@
 			baseConfigurationReference = 5A8E792C9F251246BE6B6873 /* Pods-Eaterator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y3RCB36D2R;
 				INFOPLIST_FILE = Eaterator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

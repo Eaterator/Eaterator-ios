@@ -6,6 +6,7 @@
 //  Copyright © 2017 Eaterator. All rights reserved.
 //
 
+import Alamofire
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,6 +21,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func requestAction(_ sender: UIButton) {
+        
+    }
 
 }
 
