@@ -21,10 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-px-EMq">
-                                <rect key="frame" x="112.5" y="283.5" width="150" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-px-EMq" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="112.5" y="318.5" width="150" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="849-tS-wKP"/>
                                     <constraint firstAttribute="width" constant="150" id="O9d-7y-bIS"/>
                                 </constraints>
                                 <state key="normal" title="Facebook login"/>
@@ -36,6 +35,9 @@
                             <constraint firstItem="q3a-px-EMq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2l-Cp-QiF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="q3a-px-EMq" id="98K-Mi-bcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
