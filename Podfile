@@ -6,5 +6,8 @@ pod 'Alamofire', '~> 4.3'
 pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
+pod 'SlideMenuControllerSwift'
+pod 'SwiftyJSON'
+pod 'Kingfisher', '~> 3.0' 
 
 end
