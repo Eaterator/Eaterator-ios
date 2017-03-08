@@ -12,6 +12,7 @@
 		84813E231E6F249000B67840 /* RevealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813E221E6F249000B67840 /* RevealController.swift */; };
 		84C639A01E6F786D00459F90 /* EATSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6399F1E6F786D00459F90 /* EATSearchController.swift */; };
 		84C639A61E6F795B00459F90 /* EATAddToSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C639A51E6F795B00459F90 /* EATAddToSearchCell.swift */; };
+		84C639A91E6F847C00459F90 /* EATUserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */; };
 		84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */; };
 		84E6FA751E4E5DF00029B1C9 /* EATSideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA741E4E5DF00029B1C9 /* EATSideController.swift */; };
 		84E6FA781E4E5DF00029B1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA761E4E5DF00029B1C9 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		84813E221E6F249000B67840 /* RevealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealController.swift; sourceTree = "<group>"; };
 		84C6399F1E6F786D00459F90 /* EATSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EATSearchController.swift; sourceTree = "<group>"; };
 		84C639A51E6F795B00459F90 /* EATAddToSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATAddToSearchCell.swift; path = "Search Controller/View/Cells/EATAddToSearchCell.swift"; sourceTree = "<group>"; };
+		84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATUserSessionManager.swift; path = Managers/EATUserSessionManager.swift; sourceTree = "<group>"; };
 		84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eaterator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E6FA741E4E5DF00029B1C9 /* EATSideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EATSideController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		84C639A71E6F846200459F90 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		84E6FA661E4E5DF00029B1C9 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		84E6FA711E4E5DF00029B1C9 /* Eaterator */ = {
 			isa = PBXGroup;
 			children = (
+				84C639A71E6F846200459F90 /* Managers */,
 				84C639A11E6F791200459F90 /* Search Controller */,
 				843F75CF1E6F70F80003ED75 /* Model */,
 				84813E221E6F249000B67840 /* RevealController.swift */,
@@ -329,6 +340,7 @@
 			files = (
 				84C639A01E6F786D00459F90 /* EATSearchController.swift in Sources */,
 				84E6FA751E4E5DF00029B1C9 /* EATSideController.swift in Sources */,
+				84C639A91E6F847C00459F90 /* EATUserSessionManager.swift in Sources */,
 				843F75D11E6F711B0003ED75 /* EATUser.swift in Sources */,
 				84813E231E6F249000B67840 /* RevealController.swift in Sources */,
 				84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */,

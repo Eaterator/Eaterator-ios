@@ -83,9 +83,18 @@ class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
                                 print(token.expirationDate)
                                 
                                 let url = URL.init(string: "https://www.eaterator.com/auth/app/facebook")
-                                Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseString(completionHandler: { response in
-                                    print(response)
-                                })
+                                
+                                Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                                    .responseJSON { response in
+                                        print(response.result.value)
+                                        
+                                        if let dict = response.result.value as? Dictionary<String, Any> {
+                                            if let access_token = dict["access_token"] as? String {
+                                                EATUserSessionManager.shared.token = access_token
+                                            }
+                                        }
+                                        
+                                }
                                 
                                 print("We got user ID and token.")
                             }
