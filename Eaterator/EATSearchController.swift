@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class EATSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var searchButton: UIButton!
@@ -16,6 +17,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.addRightBarButtonWithImage(UIImage(named: "menu")!)
     }
 
     override func didReceiveMemoryWarning() {

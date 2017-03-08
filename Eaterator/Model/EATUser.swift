@@ -12,4 +12,6 @@ struct EATUser  {
     let firstName : String
     let lastName : String
     let avatarLink : String?
+    
+//    static let currentUser : EATUser?
 }

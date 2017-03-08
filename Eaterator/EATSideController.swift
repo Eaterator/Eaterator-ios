@@ -20,10 +20,10 @@ class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        facebookLogin()
+        nameLabel.adjustsFontSizeToFitWidth = true
     }
     
-    func facebookLogin() {
+    @IBAction func facebookLogin(_ sender: UIButton) {
         let fbLoginManager = FBSDKLoginManager.init()
         fbLoginManager.logOut()
         
@@ -41,10 +41,7 @@ class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
                     if (error == nil) {
                         let token = FBSDKAccessToken.current()
                         
-                        if let token = token {
-                            print("user id: \(token.userID)")
-                            print("token: \(token.tokenString)")
-                        }
+                        
                         
                         var firstName, lastName, picture : String?
                         if let dict = result as? Dictionary<String, Any> {
@@ -65,16 +62,33 @@ class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
                             }
                         }
                         
-                        if let firstName = firstName, let lastName = lastName, let picture = picture {
+                        if let firstName = firstName, let lastName = lastName {
                             let user = EATUser.init(firstName: firstName, lastName: lastName, avatarLink: picture)
-                            
-                            print(user)
                             
                             if let avatar = user.avatarLink {
                                 self.avatarImageView.kf.setImage(with: URL(string: avatar))
                             }
                             
                             self.nameLabel.text = "\(user.firstName) \(user.lastName)"
+                            
+                            if let token = token {
+                                
+                                let parameters : Parameters = [
+                                    "social_id" : token.userID,
+                                    "auth_token" : token.tokenString,
+                                    "first_name" : user.firstName,
+                                    "last_name" : user.lastName
+                                ]
+                                
+                                print(token.expirationDate)
+                                
+                                let url = URL.init(string: "https://www.eaterator.com/auth/app/facebook")
+                                Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseString(completionHandler: { response in
+                                    print(response)
+                                })
+                                
+                                print("We got user ID and token.")
+                            }
                         }
                     }
                 })
