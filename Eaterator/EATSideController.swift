@@ -13,7 +13,7 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
+class EATSideController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -21,6 +21,8 @@ class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
         super.viewDidLoad()
         
         nameLabel.adjustsFontSizeToFitWidth = true
+        
+        applyGradient()
     }
     
     @IBAction func facebookLogin(_ sender: UIButton) {
@@ -103,6 +105,12 @@ class EATSideController: UIViewController/*, FBSDKLoginButtonDelegate*/ {
                 })
             }
         }
+    }
+    
+    func applyGradient() {
+        view.applyGradient(colors: [UIColor(red:0.12, green:0.51, blue:0.30, alpha:1.00),
+                                    UIColor(red:0.40, green:0.80, blue:0.60, alpha:1.00)],
+                           start: .topRight, end: .botLeft)
     }
 }
 

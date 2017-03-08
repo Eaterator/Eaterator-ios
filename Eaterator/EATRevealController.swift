@@ -9,19 +9,13 @@
 import UIKit
 import SlideMenuControllerSwift
 
-class RevealController: SlideMenuController {
+class EATRevealController: SlideMenuController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     override func awakeFromNib() {
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "navController") {
@@ -31,6 +25,9 @@ class RevealController: SlideMenuController {
             self.rightViewController = controller
         }
         
+        let padding : CGFloat = 50.0
+        SlideMenuOptions.rightViewWidth = UIScreen.main.bounds.width - padding
+                
         super.awakeFromNib()
     }
 
