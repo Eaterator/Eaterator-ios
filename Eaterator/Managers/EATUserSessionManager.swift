@@ -23,7 +23,7 @@ class EATUserSessionManager {
         lastName = nil
     }
     
-    var token : String? {
+    var token : String? /*{
         get {
             if self.token == nil {
                 if let storedToken = UserDefaults.standard.value(forKey: kTokenKey) as? String {
@@ -37,9 +37,9 @@ class EATUserSessionManager {
         set(newToken) {
             UserDefaults.standard.set(newToken, forKey: kTokenKey)
         }
-    }
+    }*/
     
-    var userId : String? {
+    var userId : String? /*{
         get {
             if self.userId == nil {
                 if let storedUserId = UserDefaults.standard.value(forKey: kUserIdKey) as? String {
@@ -53,9 +53,9 @@ class EATUserSessionManager {
         set(newUserId) {
             UserDefaults.standard.set(newUserId, forKey: kUserIdKey)
         }
-    }
+    }*/
     
-    var firstName : String? {
+    var firstName : String? /*{
         get {
             if self.firstName == nil {
                 if let storedFirstName = UserDefaults.standard.value(forKey: kFirstNameKey) as? String {
@@ -69,9 +69,9 @@ class EATUserSessionManager {
         set(newFirstName) {
             UserDefaults.standard.set(newFirstName, forKey: kFirstNameKey)
         }
-    }
+    }*/
     
-    var lastName  : String? {
+    var lastName  : String? /*{
         get {
             if self.lastName == nil {
                 if let storedLastName = UserDefaults.standard.value(forKey: kLastNameKey) as? String {
@@ -85,5 +85,5 @@ class EATUserSessionManager {
         set(newLastName) {
             UserDefaults.standard.set(newLastName, forKey: kLastNameKey)
         }
-    }
+    }*/
 }

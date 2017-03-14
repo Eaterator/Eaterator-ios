@@ -13,11 +13,24 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
+    var ingredients = [String]()
+    
+    @IBAction func searchAction(_ sender: UIButton) {
+        EATAPIManager.shared.searchForRecipes(with: ["potato", "chicken", "tomato"]) { recipes in
+            for recipe in recipes {
+                print("recipe: \(recipe)")
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.addRightBarButtonWithImage(UIImage(named: "menu")!)
+        
+        self.tableView.tableHeaderView = self.craftSearchCell()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,16 +41,14 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.row == 0) {
-            return craftSearchCell()
-        }
-        
-        return UITableViewCell.init()
+        return craftItemCell()
     }
+    
+    
     
     //MARK: - UITableViewDelegate
     
@@ -45,7 +56,13 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     //MARK: - Private
     
     func craftSearchCell() -> EATAddToSearchCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EATAddToSearchCell.identifier()) as! EATAddToSearchCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: EATAddToSearchCell.identifier) as! EATAddToSearchCell
+        
+        return cell
+    }
+    
+    func craftItemCell() -> EATSearchItemCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EATSearchItemCell.identifier) as! EATSearchItemCell
         
         return cell
     }

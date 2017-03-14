@@ -1,17 +1,17 @@
 //
-//  EATAddToSearchCell.swift
+//  EATSearchItemCell.swift
 //  Eaterator
 //
-//  Created by Roudique on 3/7/17.
+//  Created by Roudique on 3/14/17.
 //  Copyright © 2017 Eaterator. All rights reserved.
 //
 
 import UIKit
 
-class EATAddToSearchCell: EATTableViewCell {
+class EATSearchItemCell: EATTableViewCell {
     
     override class var identifier : String {        
-        return "EATAddToSearchCell"
+        return "EATSearchItemCell"
     }
 
     override func awakeFromNib() {

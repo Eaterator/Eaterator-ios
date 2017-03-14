@@ -205,6 +205,27 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EATSearchItemCell" id="FKO-Kr-ruE" customClass="EATSearchItemCell" customModule="Eaterator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKO-Kr-ruE" id="Bku-cF-s3N">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asjdkjas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2f-7a-K5O">
+                                                    <rect key="frame" x="26" y="15" width="323" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e2f-7a-K5O" firstAttribute="leading" secondItem="Bku-cF-s3N" secondAttribute="leadingMargin" constant="18" id="5Vm-nn-4b3"/>
+                                                <constraint firstItem="e2f-7a-K5O" firstAttribute="centerY" secondItem="Bku-cF-s3N" secondAttribute="centerY" id="DXH-BJ-5e3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="e2f-7a-K5O" secondAttribute="trailing" constant="18" id="bFL-9E-Qsh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="i2L-Up-9cL" id="YmQ-sf-Zsi"/>
@@ -215,6 +236,9 @@
                                 <rect key="frame" x="24" y="625" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="SEARCH"/>
+                                <connections>
+                                    <action selector="searchAction:" destination="i2L-Up-9cL" eventType="touchUpInside" id="Mqg-hF-MKb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941176470584" green="0.84313725490196079" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
