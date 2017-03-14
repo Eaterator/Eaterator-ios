@@ -8,6 +8,7 @@ pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
 pod 'SlideMenuControllerSwift'
 pod 'SwiftyJSON'
-pod 'Kingfisher', '~> 3.0' 
+pod 'Kingfisher', '~> 3.0'
+pod 'PKHUD', '~> 4.0'
 
 end

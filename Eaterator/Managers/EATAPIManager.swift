@@ -16,13 +16,13 @@ let searchUrl = "/recipe/search"
 class EATAPIManager {
     static let shared = EATAPIManager()
     
-    func searchForRecipes(with ingredients: [String], completion: @escaping ([String]) -> ()) {
+    func searchForRecipes(with ingredients: [String], recipeNames completion: @escaping ([String]) -> ()) {
         var headers = Dictionary<String, String>()
         if let token = EATUserSessionManager.shared.token {
             headers["Authorization"] = "Bearer \(token)"
         }
         
-        let url = URL.init(string: "https://www.eaterator.com/recipe/search")
+        let url = URL.init(string: "\(baseUrl)\(searchUrl)")
         
         let parameters: Parameters = [
             "ingredients": ingredients
@@ -33,8 +33,12 @@ class EATAPIManager {
             
             var recipeNames = [String]()
             
-            for recipe in json["recipes"].array! {
-                recipeNames.append(recipe["title"].string!)
+            if let recipes = json["recipes"].array {
+                for recipe in recipes {
+                    if let title = recipe["title"].string {
+                        recipeNames.append(title)
+                    }
+                }
             }
             
             completion(recipeNames)

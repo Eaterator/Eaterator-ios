@@ -15,7 +15,6 @@
 		848FF69B1E78626600D9B713 /* EATTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF69A1E78626600D9B713 /* EATTableViewCell.swift */; };
 		848FF69D1E786C5B00D9B713 /* EATAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF69C1E786C5B00D9B713 /* EATAPIManager.swift */; };
 		84C639A01E6F786D00459F90 /* EATSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6399F1E6F786D00459F90 /* EATSearchController.swift */; };
-		84C639A61E6F795B00459F90 /* EATAddToSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C639A51E6F795B00459F90 /* EATAddToSearchCell.swift */; };
 		84C639A91E6F847C00459F90 /* EATUserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */; };
 		84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */; };
 		84E6FA751E4E5DF00029B1C9 /* EATSideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA741E4E5DF00029B1C9 /* EATSideController.swift */; };
@@ -45,7 +44,6 @@
 		848FF69A1E78626600D9B713 /* EATTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATTableViewCell.swift; path = "Other Classes/Base classes/EATTableViewCell.swift"; sourceTree = "<group>"; };
 		848FF69C1E786C5B00D9B713 /* EATAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATAPIManager.swift; path = Managers/EATAPIManager.swift; sourceTree = "<group>"; };
 		84C6399F1E6F786D00459F90 /* EATSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EATSearchController.swift; sourceTree = "<group>"; };
-		84C639A51E6F795B00459F90 /* EATAddToSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATAddToSearchCell.swift; path = "Search Controller/View/Cells/EATAddToSearchCell.swift"; sourceTree = "<group>"; };
 		84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATUserSessionManager.swift; path = Managers/EATUserSessionManager.swift; sourceTree = "<group>"; };
 		84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eaterator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		84C639A41E6F793000459F90 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				84C639A51E6F795B00459F90 /* EATAddToSearchCell.swift */,
 				848FF6961E78622500D9B713 /* EATSearchItemCell.swift */,
 			);
 			name = Cells;
@@ -400,7 +397,6 @@
 				848FF69B1E78626600D9B713 /* EATTableViewCell.swift in Sources */,
 				84813E231E6F249000B67840 /* EATRevealController.swift in Sources */,
 				84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */,
-				84C639A61E6F795B00459F90 /* EATAddToSearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

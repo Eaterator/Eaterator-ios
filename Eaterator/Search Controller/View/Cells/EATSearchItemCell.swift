@@ -9,7 +9,8 @@
 import UIKit
 
 class EATSearchItemCell: EATTableViewCell {
-    
+    @IBOutlet weak var label: UILabel!
+
     override class var identifier : String {        
         return "EATSearchItemCell"
     }

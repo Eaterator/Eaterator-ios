@@ -8,21 +8,18 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import PKHUD
 
-class EATSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EATSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+                            UITextFieldDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addToSearchField: UITextField!
 
     var ingredients = [String]()
     
-    @IBAction func searchAction(_ sender: UIButton) {
-        EATAPIManager.shared.searchForRecipes(with: ["potato", "chicken", "tomato"]) { recipes in
-            for recipe in recipes {
-                print("recipe: \(recipe)")
-            }
-        }
-    }
     
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,41 +27,85 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
         self.addRightBarButtonWithImage(UIImage(named: "menu")!)
         
-        self.tableView.tableHeaderView = self.craftSearchCell()
+        addToSearchField.delegate = self
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.hideKeyboard)))
     }
+    
+    
+    //MARK: - Actions
+    
+    @IBAction func searchAction(_ sender: UIButton) {
+        if ingredients.count > 2 {
+            HUD.flash(.progress)
+            
+            EATAPIManager.shared.searchForRecipes(with: ingredients) { recipes in
+                HUD.hide()
+                
+                print("---------------------------")
+                for recipe in recipes {
+                    print("recipe:: \(recipe)")
+                }
+                print("---------------------------")
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            }
+        } else {
+            showError(message: "Not enough ingredients!")
+        }
     }
+    
+    @IBAction func addToSearchAction(_ sender: UIButton) {
+        guard let textToSearch = addToSearchField.text else { return }
+        guard !textToSearch.isEmpty else { return }
+        
+        addToSearchField.text = ""
+        
+        ingredients.insert(textToSearch, at: 0)
+        tableView.reloadData()
+    }
+    
     
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return craftItemCell()
+        return craftItemCell(name: ingredients[indexPath.row])
     }
     
     
     
     //MARK: - UITableViewDelegate
     
+    
+    //MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return false
+    }
+    
 
     //MARK: - Private
     
-    func craftSearchCell() -> EATAddToSearchCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EATAddToSearchCell.identifier) as! EATAddToSearchCell
+    func craftItemCell(name: String) -> EATSearchItemCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EATSearchItemCell.identifier) as! EATSearchItemCell
+        cell.label.text = name
         
         return cell
     }
     
-    func craftItemCell() -> EATSearchItemCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EATSearchItemCell.identifier) as! EATSearchItemCell
-        
-        return cell
+    func showError(message: String?) {
+        HUD.show(.label(message))
+        HUD.hide(afterDelay: 2)
     }
+    
+    func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     
 }
