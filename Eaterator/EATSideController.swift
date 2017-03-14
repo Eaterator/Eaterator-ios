@@ -43,8 +43,6 @@ class EATSideController: UIViewController {
                     if (error == nil) {
                         let token = FBSDKAccessToken.current()
                         
-                        
-                        
                         var firstName, lastName, picture : String?
                         if let dict = result as? Dictionary<String, Any> {
                             if let first_name = dict["first_name"] as? String {
@@ -92,7 +90,12 @@ class EATSideController: UIViewController {
                                         
                                         if let dict = response.result.value as? Dictionary<String, Any> {
                                             if let access_token = dict["access_token"] as? String {
-                                                EATUserSessionManager.shared.token = access_token
+                                                let sessionManager = EATUserSessionManager.shared
+                                                
+                                                sessionManager.token = access_token
+                                                sessionManager.userId = token.userID
+                                                sessionManager.firstName = user.firstName
+                                                sessionManager.lastName = user.lastName
                                             }
                                         }
                                         
