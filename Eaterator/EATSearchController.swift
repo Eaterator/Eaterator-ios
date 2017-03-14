@@ -86,6 +86,14 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.reloadData()
     }
     
+    func deleteFromSearchAction(_ sender: UIButton) {
+        let index = sender.tag
+        
+        ingredients.remove(at: index)
+        
+        tableView.reloadData()
+    }
+    
     
     //MARK: - UITableViewDataSource
     
@@ -94,7 +102,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return craftItemCell(name: ingredients[indexPath.row])
+        return craftItemCell(name: ingredients[indexPath.row], indexPath: indexPath)
     }
     
     
@@ -113,9 +121,12 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
 
     //MARK: - Private
     
-    func craftItemCell(name: String) -> EATSearchItemCell {
+    func craftItemCell(name: String, indexPath: IndexPath) -> EATSearchItemCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EATSearchItemCell.identifier) as! EATSearchItemCell
         cell.label.text = name
+        
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(deleteFromSearchAction(_:)), for: .touchUpInside)
         
         return cell
     }

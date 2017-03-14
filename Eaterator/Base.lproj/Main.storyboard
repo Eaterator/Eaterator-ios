@@ -154,7 +154,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhh-PS-w73">
-                                                    <rect key="frame" x="26" y="14" width="349" height="21"/>
+                                                    <rect key="frame" x="26" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4xp-W6-Wxh"/>
                                                     </constraints>
@@ -162,14 +162,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfV-BY-dsG">
+                                                    <rect key="frame" x="312" y="10" width="55" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="JwP-Jy-zai"/>
+                                                        <constraint firstAttribute="height" constant="30" id="YvM-sl-ydM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hhh-PS-w73" firstAttribute="centerY" secondItem="wUg-Gw-yZv" secondAttribute="centerY" id="1xx-QP-UBZ"/>
-                                                <constraint firstItem="hhh-PS-w73" firstAttribute="trailing" secondItem="wUg-Gw-yZv" secondAttribute="trailingMargin" constant="8" id="kYP-3l-d6L"/>
+                                                <constraint firstItem="QfV-BY-dsG" firstAttribute="centerY" secondItem="wUg-Gw-yZv" secondAttribute="centerY" id="XFQ-1c-QUj"/>
+                                                <constraint firstAttribute="trailing" secondItem="QfV-BY-dsG" secondAttribute="trailing" constant="8" id="jeY-ug-mtC"/>
+                                                <constraint firstItem="QfV-BY-dsG" firstAttribute="leading" secondItem="hhh-PS-w73" secondAttribute="trailing" constant="8" id="jgl-Mx-FD4"/>
                                                 <constraint firstItem="hhh-PS-w73" firstAttribute="leading" secondItem="wUg-Gw-yZv" secondAttribute="leadingMargin" constant="18" id="mVO-Tw-Ep6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="deleteButton" destination="QfV-BY-dsG" id="B0t-y1-v6E"/>
                                             <outlet property="label" destination="hhh-PS-w73" id="h8e-JD-8Ee"/>
                                         </connections>
                                     </tableViewCell>
