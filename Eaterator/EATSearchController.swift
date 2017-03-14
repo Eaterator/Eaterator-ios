@@ -10,6 +10,9 @@ import UIKit
 import SlideMenuControllerSwift
 import PKHUD
 
+let kSearchToRecipesSegue = "searchToRecipes"
+
+
 class EATSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate,
                             UITextFieldDelegate {
     @IBOutlet weak var searchButton: UIButton!
@@ -17,6 +20,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var addToSearchField: UITextField!
 
     var ingredients = [String]()
+    var foundRecipes = [String]()
     
     
     //MARK: - Lifecycle
@@ -32,6 +36,16 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
         self.view.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.hideKeyboard)))
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == kSearchToRecipesSegue {
+            let controller = segue.destination as! EATRecipesController
+            
+            controller.recipes = foundRecipes
+        }
+    }
+    
     
     //MARK: - Actions
     
@@ -42,15 +56,23 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
             EATAPIManager.shared.searchForRecipes(with: ingredients) { recipes in
                 HUD.hide()
                 
+                
+                if recipes.isEmpty {
+                    self.showError(message: "No recipes were found :(")
+                    return
+                }
+                
                 print("---------------------------")
                 for recipe in recipes {
                     print("recipe:: \(recipe)")
                 }
+                self.foundRecipes = recipes
+                self.performSegue(withIdentifier: kSearchToRecipesSegue, sender: nil)
                 print("---------------------------")
 
             }
         } else {
-            showError(message: "Not enough ingredients!")
+            showError(message: "Please, enter more ingredients!")
         }
     }
     
@@ -100,7 +122,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     
     func showError(message: String?) {
         HUD.show(.label(message))
-        HUD.hide(afterDelay: 2)
+        HUD.hide(afterDelay: 3)
     }
     
     func hideKeyboard() {

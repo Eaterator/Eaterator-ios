@@ -124,17 +124,17 @@
         <!--Eaterator-->
         <scene sceneID="dNG-IF-Xdm">
             <objects>
-                <viewController storyboardIdentifier="searchController" id="i2L-Up-9cL" customClass="EATSearchController" customModule="Eaterator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchController" automaticallyAdjustsScrollViewInsets="NO" id="i2L-Up-9cL" customClass="EATSearchController" customModule="Eaterator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ljT-H5-2C6"/>
                         <viewControllerLayoutGuide type="bottom" id="0Zy-OQ-Qzd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6QE-sD-fxc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter ingredients you have to make search:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coS-oi-AN4">
-                                <rect key="frame" x="23" y="82" width="329" height="30"/>
+                                <rect key="frame" x="23" y="8" width="329" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WAF-sA-paf"/>
                                 </constraints>
@@ -143,7 +143,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d7G-dz-bbT">
-                                <rect key="frame" x="0.0" y="158" width="375" height="459"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="469"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EATSearchItemCell" rowHeight="50" id="sBe-aO-vEo" customClass="EATSearchItemCell" customModule="Eaterator" customModuleProvider="target">
@@ -180,7 +180,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwg-ca-ACR">
-                                <rect key="frame" x="24" y="625" width="327" height="34"/>
+                                <rect key="frame" x="24" y="561" width="327" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="SEARCH"/>
                                 <connections>
@@ -188,7 +188,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DYa-zV-8eJ">
-                                <rect key="frame" x="18" y="120" width="301" height="30"/>
+                                <rect key="frame" x="18" y="46" width="301" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="V50-Qz-hsi"/>
                                 </constraints>
@@ -197,7 +197,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqC-0n-TyN">
-                                <rect key="frame" x="327" y="120" width="30" height="30"/>
+                                <rect key="frame" x="327" y="46" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="bFj-Wi-hzC"/>
                                     <constraint firstAttribute="height" constant="30" id="fzH-pG-Ul8"/>
@@ -223,7 +223,7 @@
                             <constraint firstItem="DYa-zV-8eJ" firstAttribute="top" secondItem="coS-oi-AN4" secondAttribute="bottom" constant="8" id="gXU-56-IJ1"/>
                             <constraint firstItem="0Zy-OQ-Qzd" firstAttribute="top" secondItem="d7G-dz-bbT" secondAttribute="bottom" constant="50" id="gu9-jU-Nuf"/>
                             <constraint firstItem="d7G-dz-bbT" firstAttribute="top" secondItem="DYa-zV-8eJ" secondAttribute="bottom" constant="8" id="nRn-oT-NIv"/>
-                            <constraint firstItem="coS-oi-AN4" firstAttribute="top" secondItem="ljT-H5-2C6" secondAttribute="bottom" constant="18" id="pPx-r7-TOn"/>
+                            <constraint firstItem="coS-oi-AN4" firstAttribute="top" secondItem="ljT-H5-2C6" secondAttribute="bottom" constant="8" id="pPx-r7-TOn"/>
                             <constraint firstItem="oqC-0n-TyN" firstAttribute="top" secondItem="coS-oi-AN4" secondAttribute="bottom" constant="8" id="qGM-cy-Wd1"/>
                             <constraint firstItem="oqC-0n-TyN" firstAttribute="leading" secondItem="DYa-zV-8eJ" secondAttribute="trailing" constant="8" id="ynR-Ll-VQA"/>
                         </constraints>
@@ -231,15 +231,81 @@
                     <navigationItem key="navigationItem" title="Eaterator" id="Vq9-0I-sEr">
                         <barButtonItem key="rightBarButtonItem" image="menu" id="XiB-Sl-3jz"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addToSearchField" destination="DYa-zV-8eJ" id="gSA-7m-H4n"/>
                         <outlet property="searchButton" destination="Mwg-ca-ACR" id="SiT-fc-5fx"/>
                         <outlet property="tableView" destination="d7G-dz-bbT" id="jgU-cu-84u"/>
+                        <segue destination="VDy-7x-7em" kind="show" identifier="searchToRecipes" id="hjI-WU-xVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkk-sw-JrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373.60000000000002" y="846.9265367316342"/>
+        </scene>
+        <!--Recipes Controller-->
+        <scene sceneID="dQF-BN-5PC">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VDy-7x-7em" customClass="EATRecipesController" customModule="Eaterator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HRL-1h-BjR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uhy-N3-S2G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hsn-VN-CQv">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l1C-1C-2ZG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EATRecipeCell" rowHeight="57" id="KcD-p9-QgD" customClass="EATRecipeCell" customModule="Eaterator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="57"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KcD-p9-QgD" id="CIg-P0-V0c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BO-FP-nfJ">
+                                                    <rect key="frame" x="18" y="8" width="339" height="40.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9BO-FP-nfJ" secondAttribute="bottom" constant="8" id="4av-b8-teQ"/>
+                                                <constraint firstItem="9BO-FP-nfJ" firstAttribute="top" secondItem="CIg-P0-V0c" secondAttribute="top" constant="8" id="KJr-02-tfm"/>
+                                                <constraint firstAttribute="trailing" secondItem="9BO-FP-nfJ" secondAttribute="trailing" constant="18" id="Okp-nC-4gm"/>
+                                                <constraint firstItem="9BO-FP-nfJ" firstAttribute="leading" secondItem="CIg-P0-V0c" secondAttribute="leading" constant="18" id="ebL-J4-tB4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="9BO-FP-nfJ" id="6ch-Ad-YP5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VDy-7x-7em" id="Gxn-4r-npr"/>
+                                    <outlet property="delegate" destination="VDy-7x-7em" id="WYr-aJ-QQ0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l1C-1C-2ZG" firstAttribute="leading" secondItem="hsn-VN-CQv" secondAttribute="leading" id="a1O-yY-pBU"/>
+                            <constraint firstItem="Uhy-N3-S2G" firstAttribute="top" secondItem="l1C-1C-2ZG" secondAttribute="bottom" id="fIb-r5-8VK"/>
+                            <constraint firstAttribute="trailing" secondItem="l1C-1C-2ZG" secondAttribute="trailing" id="fp4-hr-6a2"/>
+                            <constraint firstItem="l1C-1C-2ZG" firstAttribute="top" secondItem="HRL-1h-BjR" secondAttribute="bottom" id="kRx-ZG-gLB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="l1C-1C-2ZG" id="lM9-am-9gw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="acr-MS-eQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5999999999999" y="846.9265367316342"/>
         </scene>
     </scenes>
     <resources>
