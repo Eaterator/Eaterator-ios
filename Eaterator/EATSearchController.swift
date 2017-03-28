@@ -20,7 +20,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var addToSearchField: UITextField!
 
     var ingredients = [String]()
-    var foundRecipes = [String]()
+    var foundRecipes = [EATRecipe]()
     
     
     //MARK: - Lifecycle
@@ -68,7 +68,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 print("---------------------------")
                 for recipe in recipes {
-                    print("recipe:: \(recipe)")
+                    print("recipe:: \(recipe.title)")
                 }
                 self.foundRecipes = recipes
                 self.performSegue(withIdentifier: kSearchToRecipesSegue, sender: nil)

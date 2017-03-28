@@ -16,7 +16,7 @@ let searchUrl = "/recipe/search"
 class EATAPIManager {
     static let shared = EATAPIManager()
     
-    func searchForRecipes(with ingredients: [String], recipeNames completion: @escaping ([String], NSError?) -> ()) {
+    func searchForRecipes(with ingredients: [String], recipeNames completion: @escaping ([EATRecipe], NSError?) -> ()) {
         var headers = Dictionary<String, String>()
         if let token = EATUserSessionManager.shared.token {
             headers["Authorization"] = "Bearer \(token)"
@@ -38,17 +38,17 @@ class EATAPIManager {
             
             let json = JSON(response.result.value!)
             
-            var recipeNames = [String]()
+            var recipes = [EATRecipe]()
             
-            if let recipes = json["recipes"].array {
-                for recipe in recipes {
-                    if let title = recipe["title"].string {
-                        recipeNames.append(title)
+            if let recipesJSON = json["recipes"].array {
+                for recipeJSON in recipesJSON {
+                    if let recipe = EATRecipe.init(json: recipeJSON) {
+                        recipes.append(recipe)
                     }
                 }
             }
             
-            completion(recipeNames, nil)
+            completion(recipes, nil)
         }
     }
     

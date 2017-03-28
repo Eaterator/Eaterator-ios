@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class EATRecipe {
+class EATRecipe : EATModel {
 //    "pk": 1234
 //    "title": "My great recipe"
 //    "url": "http://foodnetwork.com.recipe/my-great-recipe
@@ -21,17 +22,36 @@ class EATRecipe {
     
     let id: Int
     let title: String
-    let url: String
     let averageRating: Double
     
+    var url: String?
     var thumbnailLink: String?
     var imageLink: String?
     
-    init(id: Int, title: String, url: String, rating: Double) {
+    init(id: Int, title: String, rating: Double) {
         self.id = id
         self.title = title
-        self.url = url
         self.averageRating = rating
+    }
+    
+    required init?(json: JSON) {
+        let id      = json["pk"].int
+        let title   = json["title"].string
+        let rating  = json["average_rating"].double
+        
+        if let id = id, let title = title, let rating = rating {
+            self.id             = id
+            self.title          = title
+            self.averageRating  = rating
+            
+            self.thumbnailLink  = json["thumbnail"].string
+            self.imageLink      = json["medium_img"].string
+            self.url            = json["url"].string
+            
+        } else {
+            return nil
+        }
+        
     }
     
 }

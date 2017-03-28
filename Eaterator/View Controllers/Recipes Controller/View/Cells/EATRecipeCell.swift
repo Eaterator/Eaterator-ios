@@ -8,13 +8,20 @@
 
 import UIKit
 
-class EATRecipeCell: EATTableViewCell {
+class EATRecipeCell: EATTableViewCell, EATModelCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView?
 
     override class var identifier : String {
         return "EATRecipeCell"
+    }
+    
+    func configure(with model: EATModel) {
+        if let recipe = model as? EATRecipe {
+            nameLabel.text = recipe.title
+            ratingLabel.text = recipe.averageRating.format(f: ".1")
+        }
     }
 
 }

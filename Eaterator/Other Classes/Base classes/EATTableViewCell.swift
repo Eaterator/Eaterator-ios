@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EATModelCell {
+    func configure(with model: EATModel)
+}
+
 class EATTableViewCell: UITableViewCell {
     
     class var identifier : String {
@@ -15,16 +19,7 @@ class EATTableViewCell: UITableViewCell {
         
         return "EATTableViewCell"
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    
 
 }
