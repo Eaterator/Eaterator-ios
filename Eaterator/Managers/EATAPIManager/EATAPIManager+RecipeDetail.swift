@@ -39,7 +39,7 @@ let recipeDetailUrl = "/recipe/recipe/"
 extension EATAPIManager {
     
     func detailsOfRecipe(_ id: Int, recipe completion: @escaping (EATRecipe?, NSError?) -> ()) -> () {
-        let url = URL.init(string: "\(baseUrl)\(recipeDetailUrl)pk:\(id)")
+        let url = URL.init(string: "\(baseUrl)\(recipeDetailUrl)\(id)")
         
         Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: self.headers()).responseJSON { response in
             guard response.result.value != nil else {
@@ -57,12 +57,19 @@ extension EATAPIManager {
                 
                 if let ingredientsJSON = dataJSON?["ingredients"]?.array {
                     for ingredientJSON in ingredientsJSON {
-                        if let ingredient = EATIngredient.init(json: ingredientJSON) {
+                        if let ingredient = EATIngredient.init(json: ingredientJSON["ingredient"]) {
                             recipe?.ingredients.append(ingredient)
                         }
                     }
                 }
+                
+                completion(recipe, nil)
+            } else {
+                let error = NSError.init(domain: "Error parsing JSON", code: -1, userInfo: nil)
+                completion(nil, error)
             }
+            
+            
             
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EATRecipeCell: EATTableViewCell, EATModelCell {
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,6 +22,12 @@ class EATRecipeCell: EATTableViewCell, EATModelCell {
         if let recipe = model as? EATRecipe {
             nameLabel.text = recipe.title
             ratingLabel.text = recipe.averageRating.format(f: ".1")
+            
+            if let link = recipe.thumbnailLink {
+                if let url = URL.init(string: link) {
+                    self.thumbnailImageView?.kf.setImage(with: url)
+                }
+            }
         }
     }
 

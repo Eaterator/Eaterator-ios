@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EATDetailRecipeController: UIViewController {
     var recipe: EATRecipe!
@@ -21,10 +22,18 @@ class EATDetailRecipeController: UIViewController {
         
         handleModel()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    //MARK: - Actions
+    
+    @IBAction func linkButtonAction(_ sender: UIButton) {
+        if recipe.url != nil {
+            if let url = URL(string: recipe.url!) {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [UIApplicationOpenURLOptionUniversalLinksOnly : false], completionHandler: nil)
+                }
+            }
+        }
     }
     
     
@@ -32,6 +41,19 @@ class EATDetailRecipeController: UIViewController {
     
     func handleModel() {
         titleLabel.text = recipe.title
+        
+        var ingredientsListString = "Ingredients:\n"
+        for ingredient in recipe.ingredients {
+            ingredientsListString += " • \(ingredient.name)\n"
+        }
+        
+        ingredientsTextView.text = ingredientsListString
+        
+        if let imageLink = recipe.imageLink {
+            if let url = URL(string: imageLink) {
+                photoImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "thumbnail"), options: nil, progressBlock: nil, completionHandler: nil)
+            }
+        }
         
     }
     

@@ -49,6 +49,18 @@ class EATRecipe : EATModel {
             self.imageLink      = json["medium_img"].string
             self.url            = json["url"].string
             
+            if thumbnailLink != nil && thumbnailLink!.isEmpty {
+                thumbnailLink = nil
+            }
+            
+            if imageLink != nil && imageLink!.isEmpty {
+                imageLink = nil
+            }
+            
+            if url != nil && url!.isEmpty {
+                url = nil
+            }
+            
         } else {
             return nil
         }

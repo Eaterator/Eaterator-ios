@@ -54,8 +54,4 @@ class EATAPIManager {
             completion(recipes, nil)
         }
     }
-    
-    func searchForImage(with name: String) {
-//        Alamofire.req
-    }
 }

@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cND-8X-x92">
-                                <rect key="frame" x="8" y="190" width="359" height="469"/>
+                                <rect key="frame" x="8" y="210" width="359" height="449"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EATSideMenuCell" rowHeight="60" id="5Za-vO-zET" customClass="EATSideMenuCell" customModule="Eaterator" customModuleProvider="target">
@@ -123,7 +123,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" translatesAutoresizingMaskIntoConstraints="NO" id="j3Y-vc-cWC">
-                                <rect key="frame" x="8" y="188" width="359" height="1"/>
+                                <rect key="frame" x="8" y="208" width="359" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="P7x-5s-Sa6"/>
                                 </constraints>
@@ -139,7 +139,7 @@
                         <color key="backgroundColor" red="0.11764705882352941" green="0.50980392156862742" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bVH-JL-Xtx" firstAttribute="leading" secondItem="ys9-b2-WSh" secondAttribute="leading" constant="4" id="1Ha-9f-PMh"/>
-                            <constraint firstItem="cND-8X-x92" firstAttribute="top" secondItem="5jm-G3-ABg" secondAttribute="bottom" constant="20" id="5t6-ot-pkj"/>
+                            <constraint firstItem="cND-8X-x92" firstAttribute="top" secondItem="5jm-G3-ABg" secondAttribute="bottom" constant="40" id="5t6-ot-pkj"/>
                             <constraint firstAttribute="trailing" secondItem="gbO-qK-g1t" secondAttribute="trailing" constant="18" id="Euo-nP-s6c"/>
                             <constraint firstItem="bVH-JL-Xtx" firstAttribute="centerY" secondItem="5jm-G3-ABg" secondAttribute="centerY" id="LdI-2W-Fc6"/>
                             <constraint firstItem="cND-8X-x92" firstAttribute="leading" secondItem="ys9-b2-WSh" secondAttribute="leading" constant="8" id="Llj-Wd-SEG"/>
@@ -352,7 +352,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-dj-sUG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-dj-sUG">
                                                     <rect key="frame" x="8" y="8" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="Rrj-bF-Tpf"/>
@@ -435,7 +435,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NQc-RF-Pd9"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Look up instructions on the website"/>
+                                <connections>
+                                    <action selector="linkButtonAction:" destination="HnO-q1-pmJ" eventType="touchUpInside" id="FLc-Bf-pCA"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lzz-ST-RjL">
                                 <rect key="frame" x="16" y="159" width="343" height="444"/>
@@ -444,7 +447,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzd-LR-krT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="hzd-LR-krT">
                                 <rect key="frame" x="8" y="8" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="SUg-Cw-UyQ"/>
@@ -485,5 +488,6 @@
         <image name="divider" width="320" height="1"/>
         <image name="facebook_icon" width="256" height="256"/>
         <image name="menu" width="38" height="38"/>
+        <image name="thumbnail" width="980" height="736"/>
     </resources>
 </document>
