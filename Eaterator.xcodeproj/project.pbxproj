@@ -18,12 +18,14 @@
 		848FF69D1E786C5B00D9B713 /* EATAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF69C1E786C5B00D9B713 /* EATAPIManager.swift */; };
 		84C639A01E6F786D00459F90 /* EATSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6399F1E6F786D00459F90 /* EATSearchController.swift */; };
 		84C639A91E6F847C00459F90 /* EATUserSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */; };
-		84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */; };
+		84E6FA731E4E5DF00029B1C9 /* EATAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA721E4E5DF00029B1C9 /* EATAppDelegate.swift */; };
 		84E6FA751E4E5DF00029B1C9 /* EATSideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA741E4E5DF00029B1C9 /* EATSideController.swift */; };
 		84E6FA781E4E5DF00029B1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA761E4E5DF00029B1C9 /* Main.storyboard */; };
-		84E6FA7A1E4E5DF00029B1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA791E4E5DF00029B1C9 /* Assets.xcassets */; };
 		84E6FA7D1E4E5DF00029B1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6FA7B1E4E5DF00029B1C9 /* LaunchScreen.storyboard */; };
 		84E6FA881E4E5DF10029B1C9 /* EateratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6FA871E4E5DF10029B1C9 /* EateratorTests.swift */; };
+		84F77CBE1E79A25D0001E662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F77CBD1E79A25D0001E662 /* Assets.xcassets */; };
+		84F77CC01E79A2630001E662 /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F77CBF1E79A2630001E662 /* credentials.json */; };
+		84F77CC31E79A2990001E662 /* EATCredentialsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F77CC21E79A2990001E662 /* EATCredentialsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,15 +52,17 @@
 		84C6399F1E6F786D00459F90 /* EATSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EATSearchController.swift; sourceTree = "<group>"; };
 		84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATUserSessionManager.swift; path = Managers/EATUserSessionManager.swift; sourceTree = "<group>"; };
 		84E6FA6F1E4E5DF00029B1C9 /* Eaterator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eaterator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84E6FA721E4E5DF00029B1C9 /* EATAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EATAppDelegate.swift; sourceTree = "<group>"; };
 		84E6FA741E4E5DF00029B1C9 /* EATSideController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EATSideController.swift; sourceTree = "<group>"; };
 		84E6FA771E4E5DF00029B1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84E6FA791E4E5DF00029B1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E6FA7C1E4E5DF00029B1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E6FA7E1E4E5DF00029B1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E6FA831E4E5DF10029B1C9 /* EateratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EateratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6FA871E4E5DF10029B1C9 /* EateratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EateratorTests.swift; sourceTree = "<group>"; };
 		84E6FA891E4E5DF10029B1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F77CBD1E79A25D0001E662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Recources/Assets.xcassets; sourceTree = "<group>"; };
+		84F77CBF1E79A2630001E662 /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = credentials.json; path = Recources/credentials.json; sourceTree = "<group>"; };
+		84F77CC21E79A2990001E662 /* EATCredentialsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATCredentialsManager.swift; path = Managers/EATCredentialsManager.swift; sourceTree = "<group>"; };
 		A1778E9701AD768D0C45200F /* Pods-Eaterator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eaterator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eaterator/Pods-Eaterator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +225,7 @@
 			children = (
 				84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */,
 				848FF69C1E786C5B00D9B713 /* EATAPIManager.swift */,
+				84F77CC21E79A2990001E662 /* EATCredentialsManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -252,11 +257,8 @@
 				8448FB9D1E7067E4006E1397 /* ViewControllers */,
 				84C639A71E6F846200459F90 /* Managers */,
 				843F75CF1E6F70F80003ED75 /* Model */,
-				84E6FA721E4E5DF00029B1C9 /* AppDelegate.swift */,
-				84E6FA761E4E5DF00029B1C9 /* Main.storyboard */,
-				84E6FA791E4E5DF00029B1C9 /* Assets.xcassets */,
-				84E6FA7B1E4E5DF00029B1C9 /* LaunchScreen.storyboard */,
-				84E6FA7E1E4E5DF00029B1C9 /* Info.plist */,
+				84F77CBB1E79A17E0001E662 /* Supporting files */,
+				84F77CBC1E79A1990001E662 /* Resources */,
 			);
 			path = Eaterator;
 			sourceTree = "<group>";
@@ -268,6 +270,26 @@
 				84E6FA891E4E5DF10029B1C9 /* Info.plist */,
 			);
 			path = EateratorTests;
+			sourceTree = "<group>";
+		};
+		84F77CBB1E79A17E0001E662 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				84E6FA761E4E5DF00029B1C9 /* Main.storyboard */,
+				84E6FA7B1E4E5DF00029B1C9 /* LaunchScreen.storyboard */,
+				84E6FA7E1E4E5DF00029B1C9 /* Info.plist */,
+				84E6FA721E4E5DF00029B1C9 /* EATAppDelegate.swift */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		84F77CBC1E79A1990001E662 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84F77CBD1E79A25D0001E662 /* Assets.xcassets */,
+				84F77CBF1E79A2630001E662 /* credentials.json */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +380,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E6FA7D1E4E5DF00029B1C9 /* LaunchScreen.storyboard in Resources */,
-				84E6FA7A1E4E5DF00029B1C9 /* Assets.xcassets in Resources */,
+				84F77CBE1E79A25D0001E662 /* Assets.xcassets in Resources */,
+				84F77CC01E79A2630001E662 /* credentials.json in Resources */,
 				84E6FA781E4E5DF00029B1C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +459,8 @@
 				8441728A1E789A8300940F8E /* EATRecipeCell.swift in Sources */,
 				848FF69B1E78626600D9B713 /* EATTableViewCell.swift in Sources */,
 				84813E231E6F249000B67840 /* EATRevealController.swift in Sources */,
-				84E6FA731E4E5DF00029B1C9 /* AppDelegate.swift in Sources */,
+				84F77CC31E79A2990001E662 /* EATCredentialsManager.swift in Sources */,
+				84E6FA731E4E5DF00029B1C9 /* EATAppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

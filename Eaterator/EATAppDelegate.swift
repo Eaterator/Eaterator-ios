@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  EATAppDelegate.swift
 //  Eaterator
 //
 //  Created by Roudique on 2/10/17.
@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import SlideMenuControllerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class EATAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        let _ = EATCredentialsManager.shared
         
         return true
     }
