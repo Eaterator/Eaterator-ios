@@ -23,6 +23,7 @@ class EATRecipe : EATModel {
     let id: Int
     let title: String
     let averageRating: Double
+    var ingredients = [EATIngredient]()
     
     var url: String?
     var thumbnailLink: String?

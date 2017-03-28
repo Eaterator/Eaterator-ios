@@ -13,6 +13,12 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
+
+let kLogInText = "Log in using Facebook"
+let kLogOutText = "Log Out"
+let kNotLoggedInText = "You are not logged in"
+
+
 class EATSideController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -38,7 +44,7 @@ class EATSideController: UIViewController {
     @IBAction func facebookLogin(_ sender: UIButton) {
         if self.isLoggedIn() {
             logout()
-            self.loginButton.setTitle("Log in using Facebook", for: .normal)
+            self.loginButton.setTitle(kLogInText, for: .normal)
         } else {
             login()
         }
@@ -125,7 +131,7 @@ class EATSideController: UIViewController {
                                                 sessionManager.firstName    = user.firstName
                                                 sessionManager.lastName     = user.lastName
                                                 
-                                                self.loginButton.setTitle("Log Out", for: .normal)
+                                                self.loginButton.setTitle(kLogOutText, for: .normal)
                                                 
                                                 if let avatar = user.avatarLink {
                                                     self.avatarImageView.kf.setImage(with: URL(string: avatar))
@@ -146,7 +152,7 @@ class EATSideController: UIViewController {
         fbLoginManager.logOut()
         EATUserSessionManager.shared.logout()
         
-        self.nameLabel.text = "User is not logged in"
+        self.nameLabel.text = kNotLoggedInText
         self.avatarImageView.image = nil
     }
     

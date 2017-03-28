@@ -135,11 +135,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func showError(message: String?) {
-        print("showError")
-        HUD.show(.label(message))
-        HUD.hide(afterDelay: 3)
-    }
+    
     
     func hideKeyboard() {
         self.view.endEditing(true)

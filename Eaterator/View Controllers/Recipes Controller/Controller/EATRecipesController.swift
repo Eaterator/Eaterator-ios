@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+let kShowRecipeDetailSegueIdentifier = "showRecipeDetail"
+
+
 class EATRecipesController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,8 +22,15 @@ class EATRecipesController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if let recipe = sender as? EATRecipe {
+            let controller = segue.destination as! EATDetailRecipeController
+            controller.recipe = recipe
+        }
     }
 
     
@@ -45,7 +56,12 @@ class EATRecipesController: UIViewController, UITableViewDataSource, UITableView
         let recipeId = recipes[indexPath.row].id
         
         EATAPIManager.shared.detailsOfRecipe(recipeId) { recipe, error in
+            guard error == nil else {
+                self.showError(message: error?.domain)
+                return
+            }
             
+            self.performSegue(withIdentifier: kShowRecipeDetailSegueIdentifier, sender: recipe)
         }
     }
     

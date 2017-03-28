@@ -9,7 +9,14 @@
 import UIKit
 import SwiftyJSON
 
-class EATIngredient {
+//"ingredient": {
+//    "name": "potato"
+//    "modifier": "small"
+//    "amount": 4
+//    "unit": None
+//}
+
+class EATIngredient: EATModel {
     let name: String
     let modifier: String?
     let amount: Int?
@@ -22,7 +29,16 @@ class EATIngredient {
         self.unit       = unit
     }
     
-//    convenience init(json: JSON) {
-//        
-//    }
+    required init?(json: JSON) {
+        let name    = json["name"].string
+        modifier    = json["modifier"].string
+        amount      = json["amount"].int
+        unit        = json["unit"].string
+        
+        if let name = name {
+            self.name = name
+        } else {
+            return nil
+        }
+    }
 }
