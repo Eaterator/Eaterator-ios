@@ -42,9 +42,9 @@ class EATRecipesController: UIViewController, UITableViewDataSource, UITableView
     //MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipe = recipes[indexPath.row]
+        let recipeId = recipes[indexPath.row].id
         
-        EATAPIManager.shared.detailsOfRecipe(recipe.id) { recipe, error in
+        EATAPIManager.shared.detailsOfRecipe(recipeId) { recipe, error in
             
         }
     }

@@ -19,6 +19,7 @@ class EATSideController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var menuTableView: UITableView!
     
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -37,7 +38,7 @@ class EATSideController: UIViewController {
     @IBAction func facebookLogin(_ sender: UIButton) {
         if self.isLoggedIn() {
             logout()
-            self.loginButton.setTitle("Log In", for: .normal)
+            self.loginButton.setTitle("Log in using Facebook", for: .normal)
         } else {
             login()
         }
