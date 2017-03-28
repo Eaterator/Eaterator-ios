@@ -31,7 +31,7 @@ class EATRecipesController: UIViewController, UITableViewDataSource, UITableView
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EATRecipeCell.identifier) as! EATRecipeCell
-        cell.label.text = recipes[indexPath.row]
+        cell.nameLabel.text = recipes[indexPath.row]
         
         return cell
     }

@@ -46,6 +46,6 @@ class EATAPIManager {
     }
     
     func searchForImage(with name: String) {
-        Alamofire.req
+//        Alamofire.req
     }
 }
