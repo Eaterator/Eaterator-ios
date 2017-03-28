@@ -17,7 +17,7 @@ class EATSideController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
-    
+    @IBOutlet weak var menuTableView: UITableView!
     
     //MARK: - Lifecycle
     
@@ -27,25 +27,34 @@ class EATSideController: UIViewController {
         nameLabel.adjustsFontSizeToFitWidth = true
         
         applyGradient()
+        
+        setUpMenuController()
     }
     
     
     //MARK: - Actions
     
     @IBAction func facebookLogin(_ sender: UIButton) {
-        var buttonTitle = ""
-        
         if self.isLoggedIn() {
             logout()
             self.loginButton.setTitle("Log In", for: .normal)
         } else {
             login()
         }
-        
     }
     
     
     //MARK: - Private
+    
+    func setUpMenuController() {
+        let menuController = EATSideMenuTableViewController()
+        menuController.tableView = menuTableView
+        menuTableView.delegate = menuController
+        menuTableView.dataSource = menuController
+        
+        addChildViewController(menuController)
+        menuController.didMove(toParentViewController: self)
+    }
     
     func login() {
         let fbLoginManager = FBSDKLoginManager.init()
