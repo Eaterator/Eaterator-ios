@@ -101,7 +101,6 @@ class EATSideController: UIViewController {
                                         
                                 }
                                 
-                                print("We got user ID and token.")
                             }
                         }
                     }

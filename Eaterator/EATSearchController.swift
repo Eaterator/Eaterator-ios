@@ -53,9 +53,13 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
         if ingredients.count > 2 {
             HUD.flash(.progress)
             
-            EATAPIManager.shared.searchForRecipes(with: ingredients) { recipes in
+            EATAPIManager.shared.searchForRecipes(with: ingredients) { recipes, error in
                 HUD.hide()
                 
+                if let error = error {
+                    self.showError(message: "\(error.domain), error code: \(error.code)")
+                    return
+                }
                 
                 if recipes.isEmpty {
                     self.showError(message: "No recipes were found :(")
@@ -132,6 +136,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func showError(message: String?) {
+        print("showError")
         HUD.show(.label(message))
         HUD.hide(afterDelay: 3)
     }
