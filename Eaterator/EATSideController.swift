@@ -16,6 +16,10 @@ import Kingfisher
 class EATSideController: UIViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,25 @@ class EATSideController: UIViewController {
         applyGradient()
     }
     
+    
+    //MARK: - Actions
+    
     @IBAction func facebookLogin(_ sender: UIButton) {
+        var buttonTitle = ""
+        
+        if self.isLoggedIn() {
+            logout()
+            self.loginButton.setTitle("Log In", for: .normal)
+        } else {
+            login()
+        }
+        
+    }
+    
+    
+    //MARK: - Private
+    
+    func login() {
         let fbLoginManager = FBSDKLoginManager.init()
         fbLoginManager.logOut()
         
@@ -65,10 +87,6 @@ class EATSideController: UIViewController {
                         if let firstName = firstName, let lastName = lastName {
                             let user = EATUser.init(firstName: firstName, lastName: lastName, avatarLink: picture)
                             
-                            if let avatar = user.avatarLink {
-                                self.avatarImageView.kf.setImage(with: URL(string: avatar))
-                            }
-                            
                             self.nameLabel.text = "\(user.firstName) \(user.lastName)"
                             
                             if let token = token {
@@ -92,21 +110,41 @@ class EATSideController: UIViewController {
                                             if let access_token = dict["access_token"] as? String {
                                                 let sessionManager = EATUserSessionManager.shared
                                                 
-                                                sessionManager.token = access_token
-                                                sessionManager.userId = token.userID
-                                                sessionManager.firstName = user.firstName
-                                                sessionManager.lastName = user.lastName
+                                                sessionManager.token        = access_token
+                                                sessionManager.userId       = token.userID
+                                                sessionManager.firstName    = user.firstName
+                                                sessionManager.lastName     = user.lastName
+                                                
+                                                self.loginButton.setTitle("Log Out", for: .normal)
+                                                
+                                                if let avatar = user.avatarLink {
+                                                    self.avatarImageView.kf.setImage(with: URL(string: avatar))
+                                                }
                                             }
                                         }
-                                        
                                 }
-                                
                             }
                         }
                     }
                 })
             }
         }
+    }
+    
+    func logout() {
+        let fbLoginManager = FBSDKLoginManager.init()
+        fbLoginManager.logOut()
+        EATUserSessionManager.shared.logout()
+        
+        self.nameLabel.text = "User is not logged in"
+        self.avatarImageView.image = nil
+    }
+    
+    func isLoggedIn() -> Bool {
+        if let _ = EATUserSessionManager.shared.token {
+            return true
+        }
+        return false
     }
     
     func applyGradient() {

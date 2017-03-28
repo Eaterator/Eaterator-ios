@@ -98,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="avatarImageView" destination="Wbr-Cj-y1g" id="jL5-d0-w5y"/>
+                        <outlet property="loginButton" destination="5jm-G3-ABg" id="8dd-pC-W3e"/>
                         <outlet property="nameLabel" destination="OoN-36-2JY" id="nnk-KI-7IP"/>
                     </connections>
                 </viewController>
