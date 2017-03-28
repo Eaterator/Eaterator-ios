@@ -10,6 +10,7 @@
 		0DEFAD60E59931B62E1DAA4B /* Pods_Eaterator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1197610311D35AE47195E564 /* Pods_Eaterator.framework */; };
 		843C7F9C1E8ABF7400544D50 /* EATModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C7F9B1E8ABF7400544D50 /* EATModel.swift */; };
 		843C7F9E1E8AC6F300544D50 /* String+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C7F9D1E8AC6F300544D50 /* String+Formatting.swift */; };
+		843C7FA11E8ACFA000544D50 /* EATAPIManager+RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C7FA01E8ACFA000544D50 /* EATAPIManager+RecipeDetail.swift */; };
 		843F75D11E6F711B0003ED75 /* EATUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F75D01E6F711B0003ED75 /* EATUser.swift */; };
 		844172861E7899C700940F8E /* EATRecipesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844172851E7899C700940F8E /* EATRecipesController.swift */; };
 		8441728A1E789A8300940F8E /* EATRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844172891E789A8300940F8E /* EATRecipeCell.swift */; };
@@ -47,6 +48,7 @@
 		5A8E792C9F251246BE6B6873 /* Pods-Eaterator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eaterator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eaterator/Pods-Eaterator.release.xcconfig"; sourceTree = "<group>"; };
 		843C7F9B1E8ABF7400544D50 /* EATModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATModel.swift; path = Model/EATModel.swift; sourceTree = "<group>"; };
 		843C7F9D1E8AC6F300544D50 /* String+Formatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Formatting.swift"; path = "Other Classes/Extensions/String+Formatting.swift"; sourceTree = "<group>"; };
+		843C7FA01E8ACFA000544D50 /* EATAPIManager+RecipeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EATAPIManager+RecipeDetail.swift"; path = "Managers/EATAPIManager/EATAPIManager+RecipeDetail.swift"; sourceTree = "<group>"; };
 		843F75D01E6F711B0003ED75 /* EATUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATUser.swift; path = Model/EATUser.swift; sourceTree = "<group>"; };
 		844172851E7899C700940F8E /* EATRecipesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATRecipesController.swift; path = "View Controllers/Recipes Controller/Controller/EATRecipesController.swift"; sourceTree = "<group>"; };
 		844172891E789A8300940F8E /* EATRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATRecipeCell.swift; path = "View Controllers/Recipes Controller/View/Cells/EATRecipeCell.swift"; sourceTree = "<group>"; };
@@ -108,6 +110,15 @@
 				1197610311D35AE47195E564 /* Pods_Eaterator.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		843C7F9F1E8ACF7800544D50 /* EATAPIManager */ = {
+			isa = PBXGroup;
+			children = (
+				848FF69C1E786C5B00D9B713 /* EATAPIManager.swift */,
+				843C7FA01E8ACFA000544D50 /* EATAPIManager+RecipeDetail.swift */,
+			);
+			name = EATAPIManager;
 			sourceTree = "<group>";
 		};
 		843F75CF1E6F70F80003ED75 /* Model */ = {
@@ -235,8 +246,8 @@
 		84C639A71E6F846200459F90 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				843C7F9F1E8ACF7800544D50 /* EATAPIManager */,
 				84C639A81E6F847C00459F90 /* EATUserSessionManager.swift */,
-				848FF69C1E786C5B00D9B713 /* EATAPIManager.swift */,
 				84F77CC21E79A2990001E662 /* EATCredentialsManager.swift */,
 			);
 			name = Managers;
@@ -474,6 +485,7 @@
 				843F75D11E6F711B0003ED75 /* EATUser.swift in Sources */,
 				8441728A1E789A8300940F8E /* EATRecipeCell.swift in Sources */,
 				848FF69B1E78626600D9B713 /* EATTableViewCell.swift in Sources */,
+				843C7FA11E8ACFA000544D50 /* EATAPIManager+RecipeDetail.swift in Sources */,
 				84813E231E6F249000B67840 /* EATRevealController.swift in Sources */,
 				84F77CC31E79A2990001E662 /* EATCredentialsManager.swift in Sources */,
 				84E6FA731E4E5DF00029B1C9 /* EATAppDelegate.swift in Sources */,

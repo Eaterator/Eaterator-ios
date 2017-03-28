@@ -16,19 +16,22 @@ let searchUrl = "/recipe/search"
 class EATAPIManager {
     static let shared = EATAPIManager()
     
-    func searchForRecipes(with ingredients: [String], recipeNames completion: @escaping ([EATRecipe], NSError?) -> ()) {
+    func headers() -> Dictionary<String, String> {
         var headers = Dictionary<String, String>()
         if let token = EATUserSessionManager.shared.token {
             headers["Authorization"] = "Bearer \(token)"
         }
-        
+        return headers
+    }
+    
+    func searchForRecipes(with ingredients: [String], recipeNames completion: @escaping ([EATRecipe], NSError?) -> ()) {        
         let url = URL.init(string: "\(baseUrl)\(searchUrl)")
         
         let parameters: Parameters = [
             "ingredients": ingredients
         ]
         
-        Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers()).responseJSON { response in
             guard response.result.value != nil else {
                 let code = response.response?.statusCode
                 let error = NSError.init(domain: "No response :(", code: code ?? -1, userInfo: nil)

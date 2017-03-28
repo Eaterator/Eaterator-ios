@@ -41,6 +41,14 @@ class EATRecipesController: UIViewController, UITableViewDataSource, UITableView
     
     //MARK: - UITableViewDelegate
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipe = recipes[indexPath.row]
+        
+        EATAPIManager.shared.detailsOfRecipe(recipe.id) { recipe, error in
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
