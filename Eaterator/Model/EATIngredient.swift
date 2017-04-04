@@ -18,9 +18,9 @@ import SwiftyJSON
 
 class EATIngredient: EATModel {
     let name: String
-    let modifier: String?
-    let amount: Int?
-    let unit: String?
+    var modifier: String?
+    var amount: Int?
+    var unit: String?
 
     init(name: String, modifier: String?, amount: Int?, unit: String?) {
         self.name       = name
@@ -39,6 +39,16 @@ class EATIngredient: EATModel {
             self.name = name
         } else {
             return nil
+        }
+        
+        if let modifier = self.modifier, modifier.isEmpty {
+            self.modifier = nil
+        }
+        if let amount = self.amount, amount == 0 {
+            self.amount = nil
+        }
+        if let unit = self.unit, unit.isEmpty {
+            self.unit = nil
         }
     }
 }

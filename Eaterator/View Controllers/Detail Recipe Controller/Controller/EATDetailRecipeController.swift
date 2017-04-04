@@ -21,6 +21,9 @@ class EATDetailRecipeController: UIViewController {
         super.viewDidLoad()
         
         handleModel()
+        
+        let saveBarButton = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(saveAction))
+        navigationItem.rightBarButtonItem = saveBarButton
     }
     
     
@@ -36,6 +39,10 @@ class EATDetailRecipeController: UIViewController {
         }
     }
     
+    func saveAction() {
+        print("Saving to database...")
+    }
+    
     
     //MARK: - Private
     
@@ -44,7 +51,16 @@ class EATDetailRecipeController: UIViewController {
         
         var ingredientsListString = "Ingredients:\n"
         for ingredient in recipe.ingredients {
-            ingredientsListString += " • \(ingredient.name)\n"
+            if let amount = ingredient.amount, let units = ingredient.unit {
+                let multiplier = amount > 1 ? "s" : ""
+                
+                ingredientsListString += " • \(amount) \(units)\(multiplier) of \(ingredient.name)\n"
+            } else if let amount = ingredient.amount, amount > 0 {
+                ingredientsListString += " • \(amount) of \(ingredient.name)\n"
+            } else {
+                ingredientsListString += " • \(ingredient.name)\n"
+            }
+            
         }
         
         ingredientsTextView.text = ingredientsListString

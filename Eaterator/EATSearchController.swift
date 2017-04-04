@@ -28,12 +28,13 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.addRightBarButtonWithImage(UIImage(named: "menu")!)
         
         addToSearchField.delegate = self
         
         self.view.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.hideKeyboard)))
+        
+        prepareDummyData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,6 +45,10 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
             
             controller.recipes = foundRecipes
         }
+    }
+    
+    func prepareDummyData() {
+        self.ingredients = ["rice", "chicken", "beans"]
     }
     
     
