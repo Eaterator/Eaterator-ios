@@ -8,16 +8,24 @@
 
 import UIKit
 
-class EATFavoritesController: UIViewController {
+
+let showFavRecipeDetailSegueId = "showFavoriteRecipeDetail"
+
+
+class EATFavoritesController: UIViewController,
+                                UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    var recipes = [EATRecipe]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.addRightBarButtonWithImage(UIImage(named: "menu")!)
-        
-        EATAPIManager.shared.getFavoriteRecipes { recipes, error in
-            
-        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,15 +33,51 @@ class EATFavoritesController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipes.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EATRecipeCell.identifier) as! EATRecipeCell
+        
+        let model = recipes[indexPath.row]
+        cell.configure(with: model)
+        
+        return cell
+    }
+    
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return recipeCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipeId = recipes[indexPath.row].id
+        
+        EATAPIManager.shared.detailsOfRecipe(recipeId) { recipe, error in
+            guard error == nil else {
+                self.showError(message: error?.domain)
+                return
+            }
+            
+            self.performSegue(withIdentifier: showFavRecipeDetailSegueId, sender: recipe)
+        }
+    }
+    
+    //MARK: - Private
+    
+    func reloadData() {
+        EATAPIManager.shared.getFavoriteRecipes { recipes, error in
+            if let recipes = recipes {
+                self.recipes = recipes
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
 
 }

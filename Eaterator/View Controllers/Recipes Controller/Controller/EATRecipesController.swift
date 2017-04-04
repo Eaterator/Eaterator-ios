@@ -11,6 +11,7 @@ import UIKit
 
 let kShowRecipeDetailSegueIdentifier = "showRecipeDetail"
 
+let recipeCellHeight = CGFloat(90.0)
 
 class EATRecipesController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -66,7 +67,7 @@ class EATRecipesController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return recipeCellHeight
     }
 
 }
