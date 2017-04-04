@@ -27,10 +27,13 @@ class EATFavoritesController: UIViewController,
         super.viewWillAppear(animated)
         reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == showFavRecipeDetailSegueId {
+            let recipe = sender as! EATRecipe
+            let controller = segue.destination as! EATDetailRecipeController
+            controller.recipe = recipe
+        }
     }
     
     
