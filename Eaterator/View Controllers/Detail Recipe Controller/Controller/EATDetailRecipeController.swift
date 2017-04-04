@@ -40,7 +40,7 @@ class EATDetailRecipeController: UIViewController {
     }
     
     func saveAction() {
-        print("Saving to database...")
+        EATAPIManager.shared.addFavoriteRecipe(with: recipe.id)
     }
     
     

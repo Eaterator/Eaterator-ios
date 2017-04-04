@@ -14,6 +14,10 @@ class EATFavoritesController: UIViewController {
         super.viewDidLoad()
 
         self.addRightBarButtonWithImage(UIImage(named: "menu")!)
+        
+        EATAPIManager.shared.getFavoriteRecipes { recipes, error in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

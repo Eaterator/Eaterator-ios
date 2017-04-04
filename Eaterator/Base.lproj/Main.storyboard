@@ -344,7 +344,7 @@
             </objects>
             <point key="canvasLocation" x="-327" y="2211"/>
         </scene>
-        <!--History Controller-->
+        <!--Search history-->
         <scene sceneID="FDE-gA-YSo">
             <objects>
                 <viewController storyboardIdentifier="historyController" id="7LT-lF-wXU" customClass="EATHistoryController" customModule="Eaterator" customModuleProvider="target" sceneMemberID="viewController">
@@ -357,7 +357,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gLK-vz-bwL"/>
+                    <navigationItem key="navigationItem" title="Search history" id="gLK-vz-bwL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIG-Sf-8eF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -379,7 +379,7 @@
             </objects>
             <point key="canvasLocation" x="-327" y="1527"/>
         </scene>
-        <!--Favorites Controller-->
+        <!--Favorites-->
         <scene sceneID="Z7q-fw-2cl">
             <objects>
                 <viewController storyboardIdentifier="favoritesController" id="gTa-MH-FCe" customClass="EATFavoritesController" customModule="Eaterator" customModuleProvider="target" sceneMemberID="viewController">
@@ -392,7 +392,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mfl-X5-RjB"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="mfl-X5-RjB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ok4-lm-vyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
