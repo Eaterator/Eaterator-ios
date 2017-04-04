@@ -355,13 +355,59 @@
                     <view key="view" contentMode="scaleToFill" id="gQS-W0-aLS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JIE-HG-rVd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="P9Q-B5-QTZ" customClass="EATHistoryCell" customModule="Eaterator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9Q-B5-QTZ" id="8N3-Dt-6le">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRv-xD-4af">
+                                                    <rect key="frame" x="8" y="8" width="359" height="83.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="NRv-xD-4af" secondAttribute="bottom" constant="8" id="2QI-av-zZ8"/>
+                                                <constraint firstAttribute="trailing" secondItem="NRv-xD-4af" secondAttribute="trailing" constant="8" id="3gB-Ka-1VK"/>
+                                                <constraint firstItem="NRv-xD-4af" firstAttribute="leading" secondItem="8N3-Dt-6le" secondAttribute="leading" constant="8" id="Xdt-X8-mi5"/>
+                                                <constraint firstItem="NRv-xD-4af" firstAttribute="top" secondItem="8N3-Dt-6le" secondAttribute="top" constant="8" id="jV9-hI-WU3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientsLabel" destination="NRv-xD-4af" id="Pth-sC-AQM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7LT-lF-wXU" id="nc2-SM-w6g"/>
+                                    <outlet property="delegate" destination="7LT-lF-wXU" id="X8m-9m-zMn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JIE-HG-rVd" secondAttribute="trailing" id="DNc-cl-GrP"/>
+                            <constraint firstItem="JIE-HG-rVd" firstAttribute="top" secondItem="yD4-y6-4Hn" secondAttribute="bottom" id="drl-ad-e8k"/>
+                            <constraint firstItem="JIE-HG-rVd" firstAttribute="leading" secondItem="gQS-W0-aLS" secondAttribute="leading" id="orV-TL-Wdy"/>
+                            <constraint firstItem="v9q-3t-T2f" firstAttribute="top" secondItem="JIE-HG-rVd" secondAttribute="bottom" id="ynL-Il-Bol"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search history" id="gLK-vz-bwL"/>
+                    <connections>
+                        <outlet property="tableView" destination="JIE-HG-rVd" id="Ol3-hP-BpQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIG-Sf-8eF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="2211"/>
+            <point key="canvasLocation" x="373.60000000000002" y="2210.6446776611697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HMv-Tm-Qus">
