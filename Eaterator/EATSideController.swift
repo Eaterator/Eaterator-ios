@@ -24,6 +24,8 @@ class EATSideController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var menuTableView: UITableView!
+    var menuController : EATSideMenuTableViewController!
+    weak var menuControllerDelegate : EATSideMenuDelegate?
     
     
     //MARK: - Lifecycle
@@ -54,8 +56,9 @@ class EATSideController: UIViewController {
     //MARK: - Private
     
     func setUpMenuController() {
-        let menuController = EATSideMenuTableViewController()
+        menuController = EATSideMenuTableViewController()
         menuController.tableView = menuTableView
+        menuController.delegate = menuControllerDelegate
         menuTableView.delegate = menuController
         menuTableView.dataSource = menuController
         

@@ -21,6 +21,8 @@
 		844826281E8AA6A80023D49B /* EATIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844826271E8AA6A80023D49B /* EATIngredient.swift */; };
 		8448262A1E8AA7D30023D49B /* EATRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844826291E8AA7D30023D49B /* EATRecipe.swift */; };
 		8448FB9C1E705DE3006E1397 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448FB9B1E705DE3006E1397 /* UIView+Gradient.swift */; };
+		844CA46D1E94097A008B4AD5 /* EATFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CA46C1E94097A008B4AD5 /* EATFavoritesController.swift */; };
+		844CA4711E9409CE008B4AD5 /* EATHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CA4701E9409CE008B4AD5 /* EATHistoryController.swift */; };
 		84813E231E6F249000B67840 /* EATRevealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813E221E6F249000B67840 /* EATRevealController.swift */; };
 		848FF6971E78622500D9B713 /* EATSearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF6961E78622500D9B713 /* EATSearchItemCell.swift */; };
 		848FF69B1E78626600D9B713 /* EATTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF69A1E78626600D9B713 /* EATTableViewCell.swift */; };
@@ -63,6 +65,8 @@
 		844826271E8AA6A80023D49B /* EATIngredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATIngredient.swift; path = Model/EATIngredient.swift; sourceTree = "<group>"; };
 		844826291E8AA7D30023D49B /* EATRecipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATRecipe.swift; path = Model/EATRecipe.swift; sourceTree = "<group>"; };
 		8448FB9B1E705DE3006E1397 /* UIView+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Gradient.swift"; path = "Extensions/UIView+Gradient.swift"; sourceTree = "<group>"; };
+		844CA46C1E94097A008B4AD5 /* EATFavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATFavoritesController.swift; path = "View Controllers/Favorites Controller/Controller/EATFavoritesController.swift"; sourceTree = "<group>"; };
+		844CA4701E9409CE008B4AD5 /* EATHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATHistoryController.swift; path = "View Controllers/History Controller/Controller/EATHistoryController.swift"; sourceTree = "<group>"; };
 		84813E221E6F249000B67840 /* EATRevealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EATRevealController.swift; sourceTree = "<group>"; };
 		848FF6961E78622500D9B713 /* EATSearchItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATSearchItemCell.swift; path = "Search Controller/View/Cells/EATSearchItemCell.swift"; sourceTree = "<group>"; };
 		848FF69A1E78626600D9B713 /* EATTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EATTableViewCell.swift; path = "Other Classes/Base classes/EATTableViewCell.swift"; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 		8448FB9D1E7067E4006E1397 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				844CA46E1E9409B2008B4AD5 /* HistoryController */,
+				844CA46A1E940931008B4AD5 /* Favorites Controller */,
 				843D1D771E8AF66C002F8B65 /* Detail Recipe Controller */,
 				8448FB9E1E7067EC006E1397 /* Reveal Controller */,
 				84C639A11E6F791200459F90 /* Search Controller */,
@@ -259,6 +265,38 @@
 				84813E221E6F249000B67840 /* EATRevealController.swift */,
 			);
 			name = "Reveal Controller";
+			sourceTree = "<group>";
+		};
+		844CA46A1E940931008B4AD5 /* Favorites Controller */ = {
+			isa = PBXGroup;
+			children = (
+				844CA46B1E940944008B4AD5 /* Controller */,
+			);
+			name = "Favorites Controller";
+			sourceTree = "<group>";
+		};
+		844CA46B1E940944008B4AD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				844CA46C1E94097A008B4AD5 /* EATFavoritesController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		844CA46E1E9409B2008B4AD5 /* HistoryController */ = {
+			isa = PBXGroup;
+			children = (
+				844CA46F1E9409BB008B4AD5 /* Controller */,
+			);
+			name = HistoryController;
+			sourceTree = "<group>";
+		};
+		844CA46F1E9409BB008B4AD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				844CA4701E9409CE008B4AD5 /* EATHistoryController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		848FF6981E78623F00D9B713 /* Other Classes */ = {
@@ -540,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C639A01E6F786D00459F90 /* EATSearchController.swift in Sources */,
+				844CA46D1E94097A008B4AD5 /* EATFavoritesController.swift in Sources */,
 				844826281E8AA6A80023D49B /* EATIngredient.swift in Sources */,
 				843C7F9E1E8AC6F300544D50 /* String+Formatting.swift in Sources */,
 				844172861E7899C700940F8E /* EATRecipesController.swift in Sources */,
@@ -559,6 +598,7 @@
 				843C7FA11E8ACFA000544D50 /* EATAPIManager+RecipeDetail.swift in Sources */,
 				84813E231E6F249000B67840 /* EATRevealController.swift in Sources */,
 				84F77CC31E79A2990001E662 /* EATCredentialsManager.swift in Sources */,
+				844CA4711E9409CE008B4AD5 /* EATHistoryController.swift in Sources */,
 				84E6FA731E4E5DF00029B1C9 /* EATAppDelegate.swift in Sources */,
 				843D1D7A1E8AF69A002F8B65 /* EATDetailRecipeController.swift in Sources */,
 			);

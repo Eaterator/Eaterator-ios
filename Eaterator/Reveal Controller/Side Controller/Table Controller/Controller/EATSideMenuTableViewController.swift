@@ -12,16 +12,29 @@ import UIKit
 struct EATSideMenuItem {
     let id: Int
     let name: String
-    var action: () -> ()
+}
+
+
+protocol EATSideMenuDelegate : NSObjectProtocol {
+    func didChooseController(at index: Int)
 }
 
 
 class EATSideMenuTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView: UITableView!
-    let menuItems = [EATSideMenuItem.init(id: 0, name: "Recipe Search", action: {print("Recipe Search")}),
-                     EATSideMenuItem.init(id: 1, name: "Favorites", action: {print("Favorites")}),
-                     EATSideMenuItem.init(id: 2, name: "Search history", action: {print("Search history")})]
+    
+    let menuItems = [EATSideMenuItem.init(id: 0, name: "Recipe Search"),
+                     EATSideMenuItem.init(id: 1, name: "Favorites"),
+                     EATSideMenuItem.init(id: 2, name: "Search history")]
     let selectedIndex = 0
+    
+    weak var delegate : EATSideMenuDelegate?
+    
+    func chooseViewController(at index: Int) {
+        if let delegate = self.delegate {
+            delegate.didChooseController(at: index)
+        }
+    }
     
 
     //MARK: - Lifecycle
@@ -59,7 +72,8 @@ class EATSideMenuTableViewController: UIViewController, UITableViewDelegate, UIT
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = menuItems[indexPath.row]
-        item.action()
+        
+        chooseViewController(at: item.id)
     }
     
 }
