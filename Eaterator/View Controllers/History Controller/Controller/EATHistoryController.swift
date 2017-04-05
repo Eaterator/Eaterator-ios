@@ -44,13 +44,13 @@ class EATHistoryController: UIViewController,
         
         var ingredientsString = ""
         
-        for search in searches {
-            for ingredient in search {
-                if search.last! == ingredient {
-                    ingredientsString += ingredient
-                } else {
-                    ingredientsString += "\(ingredient), "
-                }
+        let search = searches[indexPath.row]
+        
+        for ingredient in search {
+            if search.last! == ingredient {
+                ingredientsString += ingredient
+            } else {
+                ingredientsString += "\(ingredient), "
             }
         }
         
@@ -67,6 +67,8 @@ class EATHistoryController: UIViewController,
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
         return historyCellHeight;
     }
     
@@ -75,7 +77,10 @@ class EATHistoryController: UIViewController,
     
     func reloadData() {
         EATAPIManager.shared.getRecentSearches { searches, error in
-            print("as")
+            if let searches = searches {
+                self.searches = searches
+            }
+            self.tableView.reloadData()
         }
     }
 }

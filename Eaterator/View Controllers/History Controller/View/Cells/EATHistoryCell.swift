@@ -12,7 +12,7 @@ class EATHistoryCell: EATTableViewCell {
     @IBOutlet weak var ingredientsLabel: UILabel!
 
     override class var identifier : String {
-        return "EATTableViewCell"
+        return "EATHistoryCell"
     }
 
 }

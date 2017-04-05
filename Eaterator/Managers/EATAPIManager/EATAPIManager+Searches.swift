@@ -18,7 +18,31 @@ extension EATAPIManager {
         let url = URL.init(string: "\(baseUrl)\(searchesUrl)")!
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers()).responseJSON { response in
-            print("asd")
+            guard response.result.value != nil else {
+                let code = response.response?.statusCode
+                let error = NSError.init(domain: "No response :(", code: code ?? -1, userInfo: nil)
+                completion(nil, error)
+                return
+            }
+            
+            var searches = [[String]]()
+            
+            let json = JSON(response.result.value!)
+            if let searchesJSON = json["searches"].array {
+                for searchJSON in searchesJSON {
+                    if let dict = searchJSON.array?.first {
+                        let jsonFromString = JSON.init(parseJSON: dict.stringValue)
+                        let ingredientsJSON = jsonFromString["ingredients"].arrayValue
+                        var ingredients = [String]()
+                        for ingredientJSON in ingredientsJSON {
+                            ingredients.append(ingredientJSON.stringValue)
+                        }
+                        searches.append(ingredients)
+                    }
+                }
+            }
+            
+            completion(searches, nil)
         }
     }
     
