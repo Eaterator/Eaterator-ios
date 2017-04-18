@@ -30,15 +30,24 @@ extension EATAPIManager {
             let json = JSON(response.result.value!)
             if let searchesJSON = json["searches"].array {
                 for searchJSON in searchesJSON {
-                    if let dict = searchJSON.array?.first {
-                        let jsonFromString = JSON.init(parseJSON: dict.stringValue)
-                        let ingredientsJSON = jsonFromString["ingredients"].arrayValue
-                        var ingredients = [String]()
-                        for ingredientJSON in ingredientsJSON {
-                            ingredients.append(ingredientJSON.stringValue)
-                        }
-                        searches.append(ingredients)
+                    let dict = searchJSON["search"]
+                    let jsonFromString = JSON.init(parseJSON: dict.stringValue)
+                    let ingredientsJSON = jsonFromString["ingredients"].arrayValue
+                    var ingredients = [String]()
+                    for ingredientJSON in ingredientsJSON {
+                        ingredients.append(ingredientJSON.stringValue)
                     }
+                    searches.append(ingredients)
+                                        
+//                    if let dict = searchJSON.array?.first {
+//                        let jsonFromString = JSON.init(parseJSON: dict.stringValue)
+//                        let ingredientsJSON = jsonFromString["ingredients"].arrayValue
+//                        var ingredients = [String]()
+//                        for ingredientJSON in ingredientsJSON {
+//                            ingredients.append(ingredientJSON.stringValue)
+//                        }
+//                        searches.append(ingredients)
+//                    }
                 }
             }
             
