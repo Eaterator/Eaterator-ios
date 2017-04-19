@@ -25,7 +25,6 @@ class EATRecipeCell: EATTableViewCell, EATModelCell {
             let ratingText = recipe.averageRating.format(f: ".1")
             if let rating = Double.init(ratingText)?.rounded() {
                 let stars = "stars_\(Int.init(rating))"
-                print(stars)
                 ratingImageView?.image = UIImage.init(named: stars)
             }
             

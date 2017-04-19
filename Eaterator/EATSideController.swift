@@ -38,6 +38,8 @@ class EATSideController: UIViewController {
         applyGradient()
         
         setUpMenuController()
+        
+        autoLogin()
     }
     
     
@@ -74,7 +76,7 @@ class EATSideController: UIViewController {
         
         fbLoginManager.logIn(withReadPermissions: permissions, from: self) { result, error in
             if (error != nil) {
-                print("\(error?.localizedDescription)")
+                print("\(String(describing: error?.localizedDescription))")
             } else if (result?.isCancelled)! {
                 print("Login canceled!")
             } else {
@@ -117,14 +119,10 @@ class EATSideController: UIViewController {
                                     "last_name" : user.lastName
                                 ]
                                 
-                                print(token.expirationDate)
-                                
                                 let url = URL.init(string: "https://www.eaterator.com/auth/app/facebook")
                                 
                                 Alamofire.request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default)
                                     .responseJSON { response in
-                                        print(response.result.value)
-                                        
                                         if let dict = response.result.value as? Dictionary<String, Any> {
                                             if let access_token = dict["access_token"] as? String {
                                                 let sessionManager = EATUserSessionManager.shared
@@ -133,6 +131,7 @@ class EATSideController: UIViewController {
                                                 sessionManager.userId       = token.userID
                                                 sessionManager.firstName    = user.firstName
                                                 sessionManager.lastName     = user.lastName
+                                                sessionManager.picture      = picture
                                                 
                                                 self.loginButton.setTitle(kLogOutText, for: .normal)
                                                 
@@ -146,6 +145,30 @@ class EATSideController: UIViewController {
                         }
                     }
                 })
+            }
+        }
+    }
+    
+    func autoLogin() {
+        let sessionManager = EATUserSessionManager.shared
+        
+        let token = sessionManager.token
+        let userId = sessionManager.userId
+        let firstName = sessionManager.firstName
+        let lastName = sessionManager.lastName
+        let avatarLink = sessionManager.picture
+        
+        if let _ = token, let _ = userId, let _ = firstName, let _ = lastName {
+//            let parameters : Parameters = [
+//                "social_id" : userId,
+//                "auth_token" : token,
+//                "first_name" : firstName,
+//                "last_name" : lastName
+//            ]
+            self.loginButton.setTitle(kLogOutText, for: .normal)
+            
+            if let avatar = avatarLink {
+                self.avatarImageView.kf.setImage(with: URL(string: avatar))
             }
         }
     }

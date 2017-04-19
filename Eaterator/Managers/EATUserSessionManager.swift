@@ -12,18 +12,42 @@ let kTokenKey = "token"
 let kUserIdKey = "userId"
 let kFirstNameKey = "firstName"
 let kLastNameKey = "lastName"
+let kPictureUrlKey = "picture"
 
 class EATUserSessionManager {
     static let shared = EATUserSessionManager()
     
-    func logout() {
-        token = nil
-        userId = nil
-        firstName = nil
-        lastName = nil
+    init() {
+        login()
     }
     
-    var token : String? /*{
+    func login() {
+        self.token = UserDefaults.standard.object(forKey: kTokenKey) as? String
+        self.userId = UserDefaults.standard.object(forKey: kUserIdKey) as? String
+        self.firstName = UserDefaults.standard.object(forKey: kFirstNameKey) as? String
+        self.lastName = UserDefaults.standard.object(forKey: kLastNameKey) as? String
+        self.picture = UserDefaults.standard.object(forKey: kPictureUrlKey) as? String
+    }
+    
+    func logout() {
+        token       = nil
+        userId      = nil
+        firstName   = nil
+        lastName    = nil
+        picture     = nil
+        
+        UserDefaults.standard.removeObject(forKey: kTokenKey)
+        UserDefaults.standard.removeObject(forKey: kUserIdKey)
+        UserDefaults.standard.removeObject(forKey: kFirstNameKey)
+        UserDefaults.standard.removeObject(forKey: kLastNameKey)
+        UserDefaults.standard.removeObject(forKey: kPictureUrlKey)
+    }
+    
+    var token : String? {
+        didSet {
+            UserDefaults.standard.set(token, forKey: kTokenKey)
+        }
+    }/*{
         get {
             if self.token == nil {
                 if let storedToken = UserDefaults.standard.value(forKey: kTokenKey) as? String {
@@ -39,7 +63,11 @@ class EATUserSessionManager {
         }
     }*/
     
-    var userId : String? /*{
+    var userId : String? {
+        didSet {
+            UserDefaults.standard.set(userId, forKey: kUserIdKey)
+        }
+    }/*{
         get {
             if self.userId == nil {
                 if let storedUserId = UserDefaults.standard.value(forKey: kUserIdKey) as? String {
@@ -55,7 +83,11 @@ class EATUserSessionManager {
         }
     }*/
     
-    var firstName : String? /*{
+    var firstName : String? {
+        didSet {
+            UserDefaults.standard.set(firstName, forKey: kFirstNameKey)
+        }
+    }/*{
         get {
             if self.firstName == nil {
                 if let storedFirstName = UserDefaults.standard.value(forKey: kFirstNameKey) as? String {
@@ -71,7 +103,11 @@ class EATUserSessionManager {
         }
     }*/
     
-    var lastName  : String? /*{
+    var lastName  : String? {
+        didSet {
+            UserDefaults.standard.set(lastName, forKey: kLastNameKey)
+        }
+    }/*{
         get {
             if self.lastName == nil {
                 if let storedLastName = UserDefaults.standard.value(forKey: kLastNameKey) as? String {
@@ -86,4 +122,10 @@ class EATUserSessionManager {
             UserDefaults.standard.set(newLastName, forKey: kLastNameKey)
         }
     }*/
+    
+    var picture : String? {
+        didSet {
+            UserDefaults.standard.set(picture, forKey: kPictureUrlKey)
+        }
+    }
 }
