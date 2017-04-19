@@ -11,8 +11,8 @@ import Kingfisher
 
 class EATRecipeCell: EATTableViewCell, EATModelCell {
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView?
+    @IBOutlet weak var ratingImageView: UIImageView?
 
     override class var identifier : String {
         return "EATRecipeCell"
@@ -21,7 +21,13 @@ class EATRecipeCell: EATTableViewCell, EATModelCell {
     func configure(with model: EATModel) {
         if let recipe = model as? EATRecipe {
             nameLabel.text = recipe.title
-            ratingLabel.text = recipe.averageRating.format(f: ".1")
+            
+            let ratingText = recipe.averageRating.format(f: ".1")
+            if let rating = Double.init(ratingText)?.rounded() {
+                let stars = "stars_\(Int.init(rating))"
+                print(stars)
+                ratingImageView?.image = UIImage.init(named: stars)
+            }
             
             if let link = recipe.thumbnailLink {
                 if let url = URL.init(string: link) {
