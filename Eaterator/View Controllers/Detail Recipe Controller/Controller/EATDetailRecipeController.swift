@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import PKHUD
 
 class EATDetailRecipeController: UIViewController {
     var recipe: EATRecipe!
@@ -41,6 +42,8 @@ class EATDetailRecipeController: UIViewController {
     
     func saveAction() {
         EATAPIManager.shared.addFavoriteRecipe(with: recipe.id)
+        HUD.show(.label("Saved to favorites!"))
+        HUD.hide(afterDelay: 2.0)
     }
     
     

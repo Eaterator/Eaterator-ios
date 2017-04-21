@@ -49,9 +49,7 @@ class EATBaseController : UIViewController {
         
         bgView?.addSubview(logoImageView)
         bgView?.addSubview(loadingLabel)
-        self.view.addSubview(bgView!)
-        
-        
+        self.view.addSubview(bgView!)        
         
         logoImageView.rotate360Degrees()
     }
