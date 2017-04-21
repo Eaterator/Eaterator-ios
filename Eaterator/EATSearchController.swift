@@ -13,7 +13,7 @@ import PKHUD
 let kSearchToRecipesSegue = "searchToRecipes"
 
 
-class EATSearchController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+class EATSearchController: EATBaseController, UITableViewDataSource, UITableViewDelegate,
                             UITextFieldDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -48,18 +48,21 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func prepareDummyData() {
-        self.ingredients = ["rice", "chicken", "beans"]
+        self.ingredients = ["rice", "chicken", "celery", "oil", "soy sauce", "mushroom"]
     }
     
     
     //MARK: - Actions
     
     @IBAction func searchAction(_ sender: UIButton) {
+        startSpinnerAnimation()
+        
         if ingredients.count > 2 {
-            HUD.flash(.progress)
+//            HUD.flash(.progress)
             
             EATAPIManager.shared.searchForRecipes(with: ingredients) { recipes, error in
-                HUD.hide()
+//                HUD.hide()
+                self.stopSpinnerAnimation()
                 
                 if let error = error {
                     self.showError(message: "\(error.domain), error code: \(error.code)")
@@ -82,6 +85,7 @@ class EATSearchController: UIViewController, UITableViewDataSource, UITableViewD
             }
         } else {
             showError(message: "Please, enter more ingredients!")
+            self.stopSpinnerAnimation()
         }
     }
     

@@ -158,7 +158,7 @@ class EATSideController: UIViewController {
         let lastName = sessionManager.lastName
         let avatarLink = sessionManager.picture
         
-        if let _ = token, let _ = userId, let _ = firstName, let _ = lastName {
+        if let _ = token, let _ = userId, let firstName = firstName, let lastName = lastName {
 //            let parameters : Parameters = [
 //                "social_id" : userId,
 //                "auth_token" : token,
@@ -166,6 +166,8 @@ class EATSideController: UIViewController {
 //                "last_name" : lastName
 //            ]
             self.loginButton.setTitle(kLogOutText, for: .normal)
+            self.nameLabel.text = "\(firstName) \(lastName)"
+
             
             if let avatar = avatarLink {
                 self.avatarImageView.kf.setImage(with: URL(string: avatar))
